@@ -1,0 +1,17 @@
+# Code Envision Technologies
+
+> AI, SaaS, and custom software engineering company based in Pakistan, building enterprise platforms for clients globally.
+
+## Pages
+
+- [Home](/): Company overview and what we build.
+- [Services](/services): AI development, SaaS engineering, enterprise software, and custom platforms.
+- [About](/about): Founder story, vision, mission, and team.
+- [Portfolio](/portfolio): Case studies across LegalTech, FinTech, and enterprise.
+- [Blog](/blog): Articles on engineering, AI, architecture, and product.
+- [Careers](/careers): Open roles and how we work.
+
+## Optional
+
+- [Privacy](/privacy): Privacy policy.
+- [Terms](/terms): Terms of service.

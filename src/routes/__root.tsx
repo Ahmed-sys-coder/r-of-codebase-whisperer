@@ -13,6 +13,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import ScrollToTop from "@/components/ScrollToTop";
 import ChatWidget from "@/components/ChatWidget";
 import ContentProtection from "@/components/ContentProtection";
+import StartupDiagnostics from "@/components/StartupDiagnostics";
 import { ChatbotProvider } from "@/hooks/useChatbot";
 
 import appCss from "../styles.css?url";
@@ -131,6 +132,7 @@ function RootComponent() {
           <Toaster />
           <Sonner />
           <ChatWidget />
+          <StartupDiagnostics />
         </ChatbotProvider>
       </HelmetProvider>
     </QueryClientProvider>

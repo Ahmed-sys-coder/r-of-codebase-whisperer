@@ -60,6 +60,6 @@ export const useBlogs = () => {
 
 export const useBlogBySlug = (slug: string | undefined) => {
   const { blogs, isLoading } = useBlogs();
-  const blog = useMemo(() => blogs.find(b => b.id === slug), [blogs, slug]);
-  return { blog, isLoading };
+  const blog = useMemo(() => blogs.find((b) => b.id === slug), [blogs, slug]);
+  return { blog, blogs, isLoading };
 };

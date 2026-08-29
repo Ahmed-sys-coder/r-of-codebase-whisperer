@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import DOMPurify from "dompurify";
-import { useParams, Link, Navigate } from "@/lib/router-compat";
+import { Link, Navigate } from "@/lib/router-compat";
+import { useParams } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Calendar, User, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";

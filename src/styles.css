@@ -247,26 +247,10 @@
 
   .btn-glow:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px hsl(var(--glow-purple) / 0.5);
+    box-shadow: 0 0 0 1px #8A08FA;
   }
 
-  .btn-glow::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: var(--gradient-accent);
-    z-index: -1;
-    filter: blur(10px);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .btn-glow:hover::after {
-    opacity: 0.55;
-  }
-
-  /* Primary CTA — blue→purple gradient with violet hover glow */
+  /* Primary CTA — solid blue, purple on hover */
   .btn-white-cta {
     display: inline-flex;
     align-items: center;
@@ -275,45 +259,42 @@
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 600;
-    color: hsl(0 0% 100%);
-    background: linear-gradient(135deg, hsl(217 91% 55%) 0%, hsl(245 80% 62%) 100%);
-    border: 1px solid hsl(217 91% 55% / 0.5);
-    box-shadow:
-      0 10px 28px -10px hsl(217 91% 55% / 0.45),
-      inset 0 1px 0 hsl(0 0% 100% / 0.25);
-    transition: transform 0.35s ease, box-shadow 0.4s ease, background 0.3s ease, border-color 0.3s ease;
+    color: #FFFFFF;
+    background: #0025CC;
+    border: 1px solid #0025CC;
+    box-shadow: none;
+    transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease;
   }
   .btn-white-cta:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, hsl(245 80% 60%) 0%, hsl(268 89% 62%) 100%);
-    color: hsl(0 0% 100%);
-    border-color: hsl(258 90% 66% / 0.6);
-    box-shadow:
-      0 20px 48px -14px hsl(258 90% 66% / 0.55),
-      0 0 0 1px hsl(258 90% 66% / 0.45),
-      inset 0 1px 0 hsl(0 0% 100% / 0.3);
+    background: #8A08FA;
+    color: #FFFFFF;
+    border-color: #8A08FA;
   }
-  .btn-white-cta:hover svg { color: hsl(0 0% 100%); }
+  .btn-white-cta:focus-visible {
+    outline: 2px solid #8A08FA;
+    outline-offset: 2px;
+  }
+  .btn-white-cta:hover svg { color: #FFFFFF; }
   .btn-white-cta:active { transform: translateY(0); }
   .btn-white-cta .arrow { transition: transform 0.3s ease; }
   .btn-white-cta:hover .arrow { transform: translateX(3px); }
 
-  /* Ghost button — outline with purple hover glow */
+  /* Ghost button — outline with purple hover */
   .btn-ghost-purple {
     transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease,
       box-shadow 0.3s ease, transform 0.3s ease;
   }
   .btn-ghost-purple:hover {
-    color: hsl(258 90% 50%);
-    background: hsl(258 90% 66% / 0.08);
-    border-color: hsl(258 90% 66% / 0.55) !important;
-    box-shadow: 0 12px 32px -12px hsl(258 90% 66% / 0.4),
-      inset 0 1px 0 hsl(0 0% 100% / 0.4);
+    color: #FFFFFF;
+    background: #8A08FA;
+    border-color: #8A08FA !important;
+    box-shadow: none;
     transform: translateY(-2px);
   }
   .btn-ghost-purple:active { transform: translateY(0); }
 
-  /* Premium tech chip */
+  /* Tech chip — dark solid */
   .tech-chip {
     display: inline-flex;
     align-items: center;
@@ -324,9 +305,9 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
-    color: hsl(215 25% 27%);
-    background: hsl(0 0% 100% / 0.7);
-    border: 1px solid hsl(217 91% 55% / 0.18);
+    color: #E5E5E5;
+    background: #0A0A0A;
+    border: 1px solid rgba(255, 255, 255, 0.14);
     max-width: 100%;
     min-width: 0;
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
@@ -342,42 +323,37 @@
   }
   .tech-chip:hover {
     transform: translateY(-2px) scale(1.03);
-    color: hsl(258 90% 45%);
-    background: hsl(0 0% 100% / 0.95);
-    border-color: hsl(258 90% 66% / 0.45);
-    box-shadow: 0 10px 24px -12px hsl(258 90% 66% / 0.35);
+    color: #FFFFFF;
+    background: #111111;
+    border-color: #8A08FA;
+    box-shadow: none;
   }
-  .tech-chip svg { transition: transform 0.3s ease, filter 0.3s ease; flex-shrink: 0; }
-  .tech-chip:hover svg { transform: translateY(-1px) rotate(-2deg); filter: drop-shadow(0 2px 6px currentColor); }
+  .tech-chip svg { transition: transform 0.3s ease; flex-shrink: 0; }
+  .tech-chip:hover svg { transform: translateY(-1px) rotate(-2deg); }
   @media (prefers-reduced-motion: reduce) {
     .tech-chip, .tech-chip:hover, .tech-chip svg { transform: none !important; }
   }
 
 
-  /* Premium pill-tab navbar */
+  /* Pill-tab navbar */
   .nav-link {
     position: relative;
+    color: #E5E5E5;
     transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid transparent;
   }
   .nav-link:hover {
-    background: hsl(258 90% 66% / 0.08);
-    border-color: hsl(258 90% 66% / 0.2);
-    color: hsl(258 90% 45%);
+    background: rgba(138, 8, 250, 0.16);
+    border-color: #8A08FA;
+    color: #FFFFFF;
   }
   .nav-link.is-active {
-    background: linear-gradient(
-      90deg,
-      hsl(217 91% 55% / 0.16),
-      hsl(258 90% 66% / 0.16) 50%,
-      hsl(217 91% 55% / 0.16)
-    );
-    border-color: hsl(217 91% 55% / 0.35);
-    color: hsl(217 91% 40%);
-    box-shadow:
-      0 6px 20px -6px hsl(217 91% 55% / 0.3),
-      inset 0 1px 0 hsl(0 0% 100% / 0.6);
+    background: #8A08FA;
+    border-color: #8A08FA;
+    color: #FFFFFF;
+    box-shadow: none;
   }
+
 
   /* "Learn more" / inline link */
   .link-accent {

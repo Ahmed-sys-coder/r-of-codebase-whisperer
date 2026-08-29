@@ -1,3 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import Blog from "@/pages/Blog";
-export const Route = createFileRoute("/blog")({ component: Blog });
+import { createFileRoute, Outlet } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/blog")({ component: BlogLayout });
+
+function BlogLayout() {
+  return <Outlet />;
+}

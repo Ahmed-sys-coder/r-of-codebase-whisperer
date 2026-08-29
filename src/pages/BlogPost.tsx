@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import DOMPurify from "dompurify";
-import { useParams, Link, Navigate } from "@/lib/router-compat";
+import { Link, Navigate } from "@/lib/router-compat";
+import { useParams } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Calendar, User, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -8,14 +9,13 @@ import Footer from "@/components/Footer";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import PageTransition from "@/components/PageTransition";
 import SEO from "@/components/SEO";
-import { useBlogs, useBlogBySlug } from "@/hooks/useBlogs";
+import { useBlogBySlug } from "@/hooks/useBlogs";
 import BlogEngagement from "@/components/blog/BlogEngagement";
 import BlogComments from "@/components/blog/BlogComments";
 
 const BlogPost = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const { blog: post, isLoading } = useBlogBySlug(slug);
-  const { blogs } = useBlogs();
+  const { slug } = useParams({ from: "/blog/$slug" });
+  const { blog: post, blogs, isLoading } = useBlogBySlug(slug);
   const commentsRef = useRef<HTMLDivElement>(null);
   const [commentCount, setCommentCount] = useState(0);
 

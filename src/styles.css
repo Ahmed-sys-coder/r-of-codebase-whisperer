@@ -112,41 +112,31 @@
 
   p { line-height: 1.7; }
 }
-/* Gradient text utilities */
+/* Solid-color text + surface utilities */
 @layer utilities {
   .text-gradient-headline {
-    color: #0B3D91;
+    color: #FFFFFF;
   }
   .text-clean-blue {
-    color: #0B3D91;
+    color: #FFFFFF;
   }
 
   .text-gradient-subtle {
-    background: linear-gradient(180deg, hsl(222 47% 15%) 0%, hsl(215 25% 35%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #E5E5E5;
   }
 
   .text-gradient-accent {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #8A08FA;
   }
 
   .bg-gradient-accent {
-    background: var(--gradient-accent);
+    background: #8A08FA;
   }
 
   .glass {
-    background: hsl(var(--glass-bg));
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    background: #0A0A0A;
     border: 1px solid hsl(var(--glass-border));
-    box-shadow:
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.6),
-      0 8px 28px -12px hsl(217 91% 55% / 0.18);
+    box-shadow: none;
   }
 
   .glass-hover {
@@ -159,24 +149,17 @@
   .glass-hover:hover {
     transform: translateY(-4px);
     border-color: hsl(var(--glass-border-hover));
-    box-shadow:
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.7),
-      0 18px 44px -14px hsl(var(--glow-purple) / 0.32),
-      0 0 0 1px hsl(var(--glow-purple) / 0.22);
+    box-shadow: 0 0 0 1px #8A08FA;
   }
   .glass-hover > * { position: relative; z-index: 1; }
 
-  /* Premium card — frosted white on light bg */
+  /* Premium card — solid dark surface */
   .premium-card {
     position: relative;
-    background: linear-gradient(180deg, hsl(0 0% 100% / 0.85) 0%, hsl(210 40% 98% / 0.7) 100%);
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid hsl(217 91% 55% / 0.15);
+    background: #0A0A0A;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 1.5rem;
-    box-shadow:
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.8),
-      0 12px 36px -16px hsl(217 91% 55% / 0.22);
+    box-shadow: none;
     transition:
       transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
       border-color 0.4s ease,
@@ -185,24 +168,15 @@
   }
   .premium-card:hover {
     transform: translateY(-4px);
-    border-color: hsl(258 90% 66% / 0.5);
-    box-shadow:
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.9),
-      0 22px 56px -18px hsl(258 90% 66% / 0.3),
-      0 0 0 1px hsl(258 90% 66% / 0.2);
+    border-color: #8A08FA;
+    box-shadow: 0 0 0 1px #8A08FA;
   }
-  .premium-card.tone-cyan:hover {
-    border-color: hsl(213 94% 60% / 0.5);
-    box-shadow:
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.9),
-      0 22px 56px -18px hsl(213 94% 60% / 0.28);
-  }
+  .premium-card.tone-cyan:hover,
   .premium-card.tone-emerald:hover {
-    border-color: hsl(160 70% 45% / 0.5);
-    box-shadow:
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.9),
-      0 22px 56px -18px hsl(160 70% 45% / 0.25);
+    border-color: #0025CC;
+    box-shadow: 0 0 0 1px #0025CC;
   }
+
 
   /* Premium icon badge — colorful gradient tile */
   /* Premium soft-glass icon badge */

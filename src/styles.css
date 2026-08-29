@@ -47,46 +47,46 @@
 
 @layer base {
   :root {
-    --background: 210 40% 99%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 217 91% 55%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 229 100% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 258 90% 66%;
-    --primary-blue: 217 91% 55%;
-    --primary-cyan: 213 94% 60%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 15%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 40%;
-    --accent: 258 90% 66%;
+    --primary-glow: 272 94% 51%;
+    --primary-blue: 229 100% 40%;
+    --primary-cyan: 229 100% 40%;
+    --secondary: 272 94% 51%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 72%;
+    --accent: 272 94% 51%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 215 30% 88%;
-    --input: 215 30% 88%;
-    --ring: 217 91% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 272 94% 51%;
     --radius: 0.75rem;
-    --glass-bg: 0 0% 100% / 0.72;
-    --glass-border: 217 91% 55% / 0.18;
-    --glass-border-hover: 258 90% 66% / 0.5;
-    --glow-purple: 258 90% 66%;
-    --glow-blue: 217 91% 55%;
-    --text-silver: 215 25% 27%;
-    --text-dim: 215 16% 47%;
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 55%) 0%, hsl(245 80% 62%) 50%, hsl(268 89% 66%) 100%);
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 217 91% 55%;
+    --glass-bg: 0 0% 5%;
+    --glass-border: 0 0% 100% / 0.12;
+    --glass-border-hover: 272 94% 51% / 0.6;
+    --glow-purple: 272 94% 51%;
+    --glow-blue: 229 100% 40%;
+    --text-silver: 0 0% 82%;
+    --text-dim: 0 0% 64%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 229 100% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 222 47% 15%;
-    --sidebar-border: 215 30% 88%;
-    --sidebar-ring: 217 91% 55%;
+    --sidebar-accent: 0 0% 9%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 272 94% 51%;
   }
+
 
   * { border-color: hsl(var(--border)); }
 

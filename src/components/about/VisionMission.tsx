@@ -24,7 +24,7 @@ const Pillar = ({ icon: Icon, label, title, description, accent, iconBg, iconGlo
     className="group relative glass glass-hover rounded-2xl overflow-hidden"
   >
     <div
-      className={`absolute inset-0 bg-gradient-to-br ${accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none`}
+      className={`absolute inset-0 bg-transparent ${accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none`}
     />
     <div className="relative p-6 md:p-8">
       <div className="flex items-center gap-3 mb-4">
@@ -54,7 +54,7 @@ const pillars: Omit<PillarProps, "index">[] = [
     description:
       "Within 5 years, 'Built in Pakistan' should mean the same as 'Built in Silicon Valley' — engineering excellence, architectural rigor, and uncompromising quality. We're proving it one product at a time.",
     accent: "from-[hsl(260_80%_65%/0.08)] to-transparent",
-    iconBg: "linear-gradient(135deg, rgba(167,139,250,0.28), rgba(99,102,241,0.2))",
+    iconBg: "#8A08FA",
     iconGlow: "rgba(167,139,250,0.55)",
     iconColor: "#C4B5FD",
   },
@@ -65,7 +65,7 @@ const pillars: Omit<PillarProps, "index">[] = [
     description:
       "Deliver enterprise-grade software that survives market realities — real users, real traffic, real scale. We combine deep technical architecture with business acumen to build products that drive measurable outcomes.",
     accent: "from-[hsl(220_80%_60%/0.08)] to-transparent",
-    iconBg: "linear-gradient(135deg, rgba(244,114,182,0.28), rgba(167,139,250,0.2))",
+    iconBg: "#8A08FA",
     iconGlow: "rgba(244,114,182,0.55)",
     iconColor: "#F472B6",
   },
@@ -76,7 +76,7 @@ const pillars: Omit<PillarProps, "index">[] = [
     description:
       "We're investing profits into our own SaaS products and AI research. The agency funds the vision. Today we're trusted engineering partners. Tomorrow, we'll have our own global products.",
     accent: "from-[hsl(30_80%_55%/0.08)] to-transparent",
-    iconBg: "linear-gradient(135deg, rgba(251,146,60,0.28), rgba(251,191,36,0.2))",
+    iconBg: "#8A08FA",
     iconGlow: "rgba(251,146,60,0.55)",
     iconColor: "#FB923C",
   },
@@ -87,7 +87,7 @@ const pillars: Omit<PillarProps, "index">[] = [
     description:
       "Distributed from Islamabad with timezone coverage for US, EU, and MENA. We follow Silicon Valley best practices: clean architecture, TDD, continuous deployment, and agile cycles. No shortcuts on quality.",
     accent: "from-[hsl(160_70%_50%/0.08)] to-transparent",
-    iconBg: "linear-gradient(135deg, rgba(34,211,238,0.28), rgba(59,130,246,0.2))",
+    iconBg: "#8A08FA",
     iconGlow: "rgba(34,211,238,0.55)",
     iconColor: "#22D3EE",
   },

@@ -135,7 +135,7 @@ const TeamSection = () => {
                     className="w-full h-full"
                     style={{
                       background:
-                        "radial-gradient(circle at top right, hsl(260 80% 65% / 0.08), transparent 70%)",
+                        "#8A08FA",
                     }}
                   />
                 </div>

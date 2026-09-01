@@ -31,7 +31,7 @@ const FAQSection = ({
         className="w-full max-w-[1180px] mx-auto rounded-[28px] border border-[hsl(217_91%_55%/0.18)] px-5 sm:px-10 md:px-16 py-12 md:py-16"
         style={{
           background:
-            "linear-gradient(180deg, hsl(0 0% 100% / 0.95) 0%, hsl(217 91% 55% / 0.05) 100%)",
+            "#8A08FA",
           boxShadow:
             "0 24px 60px -24px hsl(217 91% 55% / 0.22), inset 0 1px 0 hsl(0 0% 100% / 0.8)",
         }}

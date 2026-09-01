@@ -196,13 +196,13 @@ const Navbar = () => {
                                 key={s.slug}
                                 to={`/services/${s.slug}`}
                                 onClick={() => setServicesOpen(false)}
-                                className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-[#0F172A] hover:bg-gradient-to-r hover:from-[rgba(15,69,148,0.08)] hover:to-[rgba(124,58,237,0.08)] transition-colors"
+                                className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-[#0F172A] hover:bg-transparent hover:from-[rgba(15,69,148,0.08)] hover:to-[rgba(124,58,237,0.08)] transition-colors"
                               >
                                 <span
                                   className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-white shrink-0"
                                   style={{
                                     background:
-                                      "linear-gradient(135deg, hsl(220 86% 48%), hsl(258 90% 60%))",
+                                      "#8A08FA",
                                   }}
                                 >
                                   <SIcon size={16} />
@@ -240,7 +240,7 @@ const Navbar = () => {
           aria-label="Ask CodeEnvision AI"
           className="hidden lg:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-[13px] font-semibold text-white shrink-0 transition-all duration-300 ease-out cursor-pointer hover:-translate-y-0.5 hover:scale-[1.07]"
           style={{
-            background: "linear-gradient(135deg, hsl(220 86% 42%) 0%, hsl(220 86% 48%) 100%)",
+            background: "#8A08FA",
             boxShadow:
               "0 8px 22px -10px hsl(220 86% 42% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.25)",
           }}
@@ -381,7 +381,7 @@ const Navbar = () => {
                                       className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white shrink-0"
                                       style={{
                                         background:
-                                          "linear-gradient(135deg, hsl(220 86% 48%), hsl(258 90% 60%))",
+                                          "#8A08FA",
                                       }}
                                     >
                                       <SIcon size={14} />
@@ -424,7 +424,7 @@ const Navbar = () => {
                 style={{
                   height: "54px",
                   fontSize: "15px",
-                  background: "linear-gradient(135deg, hsl(220 86% 42%) 0%, hsl(220 86% 48%) 100%)",
+                  background: "#8A08FA",
                   boxShadow:
                     "0 10px 26px -10px hsl(220 86% 42% / 0.55), inset 0 1px 0 hsl(0 0% 100% / 0.25)",
                 }}

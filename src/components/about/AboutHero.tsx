@@ -20,7 +20,7 @@ const AboutHero = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, rgba(11, 61, 145, 0.82) 0%, rgba(37, 99, 235, 0.70) 35%, rgba(124, 58, 237, 0.68) 70%, rgba(15, 23, 42, 0.85) 100%)",
+              "#8A08FA",
           }}
         />
         {/* Subtle noise texture */}

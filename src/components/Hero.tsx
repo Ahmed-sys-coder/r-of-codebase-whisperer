@@ -117,7 +117,7 @@ const Hero = () => {
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, #1e1b4b 0%, #0b1437 55%, #060a24 100%)",
+            "#8A08FA",
         }}
       />
 
@@ -130,11 +130,11 @@ const Hero = () => {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div
           className="absolute top-1/3 left-1/4 w-[560px] h-[560px] rounded-full blur-3xl opacity-50"
-          style={{ background: "radial-gradient(circle, rgba(59,130,246,0.35) 0%, transparent 70%)" }}
+          style={{ background: "#8A08FA" }}
         />
         <div
           className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl opacity-45"
-          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.38) 0%, transparent 70%)" }}
+          style={{ background: "#8A08FA" }}
         />
       </div>
 
@@ -144,7 +144,7 @@ const Hero = () => {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(6,10,36,0.55) 0%, rgba(6,10,36,0.15) 70%, transparent 100%)",
+            "#8A08FA",
         }}
       />
 
@@ -160,7 +160,7 @@ const Hero = () => {
             className="bg-clip-text text-transparent"
             style={{
               backgroundImage:
-                "linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%)",
+                "#8A08FA",
             }}
           >
             AI Development

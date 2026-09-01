@@ -170,7 +170,7 @@ const ChatWidget = () => {
           height: "clamp(56px, 4vw, 68px)",
           right: "clamp(18px, 3.5vw, 40px)",
           bottom: "clamp(24px, 4vh, 40px)",
-          background: "linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)",
+          background: "#8A08FA",
           boxShadow: "0 12px 32px rgba(37, 99, 235, 0.35)",
         }}
         whileTap={{ scale: 0.95 }}
@@ -193,7 +193,7 @@ const ChatWidget = () => {
               zIndex: 9999,
               width: "100vw",
               height: "100vh",
-              background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)",
+              background: "#8A08FA",
             }}
             role="dialog"
             aria-modal="true"
@@ -215,7 +215,7 @@ const ChatWidget = () => {
                 <div className="flex items-center gap-2.5 min-w-0">
                   <div
                     className="w-9 h-9 rounded-xl flex items-center justify-center text-white shrink-0"
-                    style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                    style={{ background: "#8A08FA" }}
                   >
                     <Sparkles size={18} />
                   </div>
@@ -230,7 +230,7 @@ const ChatWidget = () => {
                 <button
                   onClick={handleNewChat}
                   className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-white transition-all hover:shadow-md hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                  style={{ background: "#8A08FA" }}
                 >
                   <Plus size={14} /> New Chat
                 </button>
@@ -268,7 +268,7 @@ const ChatWidget = () => {
                       <button
                         onClick={handleNewChat}
                         className="w-full flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-lg text-white transition-all hover:shadow-md"
-                        style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                        style={{ background: "#8A08FA" }}
                       >
                         <Plus size={16} /> New chat
                       </button>
@@ -307,7 +307,7 @@ const ChatWidget = () => {
                       <div className="flex flex-col items-center text-center pt-6 sm:pt-10">
                         <div
                           className="w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-5"
-                          style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                          style={{ background: "#8A08FA" }}
                         >
                           <Sparkles size={26} />
                         </div>
@@ -348,7 +348,7 @@ const ChatWidget = () => {
                               style={{
                                 background:
                                   msg.sender === "bot"
-                                    ? "linear-gradient(135deg, #2563eb, #7c3aed)"
+                                    ? "#8A08FA"
                                     : "#0f172a",
                               }}
                             >
@@ -363,7 +363,7 @@ const ChatWidget = () => {
                                 }`}
                                 style={
                                   msg.sender === "user"
-                                    ? { background: "linear-gradient(135deg, #2563eb, #7c3aed)" }
+                                    ? { background: "#8A08FA" }
                                     : { borderColor: "#e2e8f0" }
                                 }
                               >
@@ -384,7 +384,7 @@ const ChatWidget = () => {
                           <div className="flex gap-3">
                             <div
                               className="w-8 h-8 rounded-lg flex items-center justify-center text-white shrink-0"
-                              style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                              style={{ background: "#8A08FA" }}
                             >
                               <Sparkles size={14} />
                             </div>
@@ -429,7 +429,7 @@ const ChatWidget = () => {
                         onClick={() => sendMessage(input)}
                         disabled={!input.trim()}
                         className="w-10 h-10 rounded-xl flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:shadow-md"
-                        style={{ background: "linear-gradient(135deg, #2563eb, #7c3aed)" }}
+                        style={{ background: "#8A08FA" }}
                         aria-label="Send message"
                       >
                         <Send size={16} />

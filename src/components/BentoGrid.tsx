@@ -96,7 +96,7 @@ const BentoGrid = () => {
                 className={`${service.colSpan} group relative rounded-2xl glass glass-hover cursor-default overflow-hidden`}
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}
+                  className={`absolute inset-0 bg-transparent ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}
                 />
                 <div className="relative p-6 md:p-8 flex flex-col h-full min-h-[180px]">
                   <div className="mb-4 w-10 h-10 rounded-xl bg-[hsl(0_0%_100%/0.05)] border border-[hsl(0_0%_100%/0.08)] flex items-center justify-center group-hover:border-[hsl(0_0%_100%/0.15)] transition-colors duration-300">
@@ -112,7 +112,7 @@ const BentoGrid = () => {
                     <div
                       className="w-full h-full"
                       style={{
-                        background: "radial-gradient(circle at top right, hsl(260 80% 65% / 0.08), transparent 70%)",
+                        background: "#8A08FA",
                       }}
                     />
                   </div>

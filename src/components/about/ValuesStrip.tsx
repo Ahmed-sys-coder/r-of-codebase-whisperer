@@ -7,7 +7,7 @@ const values = [
     label: "Client Value",
     description:
       "We focus on building software solutions that solve real business problems and create measurable value for our clients.",
-    iconBg: "linear-gradient(135deg, rgba(15,69,148,0.12), rgba(37,99,235,0.10))",
+    iconBg: "#8A08FA",
     iconColor: "#0F4594",
     iconHoverColor: "#2563EB",
   },
@@ -16,7 +16,7 @@ const values = [
     label: "Quality Engineering",
     description:
       "We write clean, scalable, and maintainable code so every product is reliable, secure, and ready to grow.",
-    iconBg: "linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.10))",
+    iconBg: "#8A08FA",
     iconColor: "#2563EB",
     iconHoverColor: "#7C3AED",
   },
@@ -25,7 +25,7 @@ const values = [
     label: "Integrity",
     description:
       "We work with honesty, transparency, and clear communication throughout every stage of the project.",
-    iconBg: "linear-gradient(135deg, rgba(124,58,237,0.12), rgba(139,92,246,0.10))",
+    iconBg: "#8A08FA",
     iconColor: "#7C3AED",
     iconHoverColor: "#8B5CF6",
   },
@@ -34,7 +34,7 @@ const values = [
     label: "Accountability",
     description:
       "We take ownership of our work, timelines, decisions, and results to keep every project moving with confidence.",
-    iconBg: "linear-gradient(135deg, rgba(15,69,148,0.12), rgba(37,99,235,0.10))",
+    iconBg: "#8A08FA",
     iconColor: "#0F4594",
     iconHoverColor: "#2563EB",
   },
@@ -43,7 +43,7 @@ const values = [
     label: "Collaboration",
     description:
       "We work closely with clients as partners, combining technical expertise with their business vision.",
-    iconBg: "linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.10))",
+    iconBg: "#8A08FA",
     iconColor: "#2563EB",
     iconHoverColor: "#7C3AED",
   },
@@ -52,7 +52,7 @@ const values = [
     label: "Growth Mindset",
     description:
       "We design digital products that support long-term growth through better performance, automation, and user experience.",
-    iconBg: "linear-gradient(135deg, rgba(124,58,237,0.12), rgba(139,92,246,0.10))",
+    iconBg: "#8A08FA",
     iconColor: "#7C3AED",
     iconHoverColor: "#8B5CF6",
   },

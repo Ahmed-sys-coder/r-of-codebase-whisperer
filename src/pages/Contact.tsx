@@ -53,7 +53,7 @@ const Contact = () => {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background:
-                    "radial-gradient(ellipse 70% 60% at 50% 0%, hsl(245 80% 62% / 0.16), transparent 70%), radial-gradient(ellipse 60% 50% at 100% 100%, hsl(268 89% 62% / 0.12), transparent 70%)",
+                    "#8A08FA, #8A08FA",
                 }}
               />
               <div className="relative z-10">
@@ -76,7 +76,7 @@ const Contact = () => {
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                       style={{
                         background:
-                          "linear-gradient(135deg, rgba(56,189,248,0.22), rgba(59,130,246,0.18))",
+                          "#8A08FA",
                         boxShadow: "0 8px 24px -10px rgba(56,189,248,0.55)",
                       }}
                     >
@@ -104,7 +104,7 @@ const Contact = () => {
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                       style={{
                         background:
-                          "linear-gradient(135deg, hsl(217 91% 55% / 0.22), hsl(258 89% 62% / 0.20))",
+                          "#8A08FA",
                         boxShadow: "0 8px 24px -10px hsl(245 80% 62% / 0.55)",
                         border: "1px solid hsl(245 80% 62% / 0.35)",
                       }}

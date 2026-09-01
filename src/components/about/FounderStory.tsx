@@ -56,7 +56,7 @@ const FounderStory = () => {
                     className="absolute inset-0 rounded-2xl pointer-events-none"
                     style={{
                       background:
-                        "radial-gradient(ellipse 80% 60% at 20% 10%, hsl(260 80% 60% / 0.06), transparent 70%)",
+                        "#8A08FA",
                     }}
                   />
                   <div className="relative z-10">

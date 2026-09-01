@@ -52,7 +52,7 @@ const AboutSection = () => {
       <div
         className="absolute inset-0 -z-10"
         style={{
-          background: "linear-gradient(135deg, #123BFF 0%, #5B2EFF 50%, #8B35FF 100%)",
+          background: "#8A08FA",
           backgroundSize: "400% 400%",
           animation: "gradientShift 15s ease infinite",
         }}
@@ -63,7 +63,7 @@ const AboutSection = () => {
         className="absolute inset-0 -z-10 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 70%)",
+            "#8A08FA",
         }}
       />
 

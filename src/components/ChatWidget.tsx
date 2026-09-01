@@ -236,7 +236,7 @@ const ChatWidget = () => {
                 </button>
                 <button
                   onClick={handleClearChat}
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 text-neutral-200 hover:bg-neutral-900 transition-colors"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-white/10 text-neutral-200 hover:bg-neutral-900 transition-colors"
                 >
                   <Trash2 size={14} /> Clear Chat
                 </button>
@@ -283,7 +283,7 @@ const ChatWidget = () => {
                           onClick={() => setActiveId(s.id)}
                           className={`w-full text-left flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors truncate ${
                             s.id === activeId
-                              ? "bg-[#8A08FA] shadow-sm text-white border border-slate-200"
+                              ? "bg-[#0A0A0A] shadow-sm text-white border border-white/10"
                               : "text-neutral-300 hover:bg-neutral-900"
                           }`}
                         >
@@ -322,7 +322,7 @@ const ChatWidget = () => {
                             <button
                               key={p.title}
                               onClick={() => sendMessage(p.prompt)}
-                              className="text-left p-4 rounded-xl border bg-[#8A08FA] hover:border-blue-300 hover:shadow-md transition-all hover:-translate-y-0.5"
+                              className="text-left p-4 rounded-xl border bg-[#0A0A0A] hover:border-[#8A08FA] hover:shadow-md transition-all hover:-translate-y-0.5"
                               style={{ borderColor: "#e2e8f0" }}
                             >
                               <p className="text-sm font-semibold text-white">{p.title}</p>
@@ -359,7 +359,7 @@ const ChatWidget = () => {
                                 className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
                                   msg.sender === "user"
                                     ? "text-white rounded-tr-md"
-                                    : "bg-[#8A08FA] text-white border rounded-tl-md"
+                                    : "bg-[#0A0A0A] text-white border rounded-tl-md"
                                 }`}
                                 style={
                                   msg.sender === "user"
@@ -389,7 +389,7 @@ const ChatWidget = () => {
                               <Sparkles size={14} />
                             </div>
                             <div
-                              className="px-4 py-3 rounded-2xl bg-[#8A08FA] border flex items-center gap-1"
+                              className="px-4 py-3 rounded-2xl bg-[#0A0A0A] border flex items-center gap-1"
                               style={{ borderColor: "#e2e8f0" }}
                             >
                               <span className="w-2 h-2 bg-neutral-700 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
@@ -408,7 +408,7 @@ const ChatWidget = () => {
                 <div className="border-t bg-neutral-900 backdrop-blur-md" style={{ borderColor: "#e2e8f0" }}>
                   <div className="max-w-3xl mx-auto w-full px-4 sm:px-6 py-4">
                     <div
-                      className="flex items-end gap-2 p-2 rounded-2xl border bg-[#8A08FA] shadow-sm focus-within:border-blue-400 focus-within:shadow-md transition-all"
+                      className="flex items-end gap-2 p-2 rounded-2xl border bg-[#0A0A0A] shadow-sm focus-within:border-[#8A08FA] focus-within:shadow-md transition-all"
                       style={{ borderColor: "#e2e8f0" }}
                     >
                       <textarea

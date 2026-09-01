@@ -56,7 +56,7 @@ const FAQSection = ({
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="group border border-[hsl(217_91%_55%/0.18)] rounded-2xl bg-[#8A08FA] px-5 md:px-6 transition-all duration-300 hover:border-[hsl(220_86%_42%/0.55)] hover:shadow-[0_14px_32px_-16px_hsl(258_90%_66%/0.35)] data-[state=open]:border-[hsl(220_86%_42%/0.6)] data-[state=open]:shadow-[0_18px_40px_-18px_hsl(258_90%_66%/0.4)]"
+              className="group border border-[hsl(217_91%_55%/0.18)] rounded-2xl bg-[#0A0A0A] px-5 md:px-6 transition-all duration-300 hover:border-[hsl(220_86%_42%/0.55)] hover:shadow-[0_14px_32px_-16px_hsl(258_90%_66%/0.35)] data-[state=open]:border-[hsl(220_86%_42%/0.6)] data-[state=open]:shadow-[0_18px_40px_-18px_hsl(258_90%_66%/0.4)]"
               style={{ boxShadow: "0 4px 14px -8px hsl(217 91% 55% / 0.12)" }}
             >
               <AccordionTrigger className="text-left text-[15px] md:text-base font-semibold py-4 md:py-5 text-[hsl(222_47%_11%)] hover:no-underline [&>svg]:text-[hsl(220_86%_42%)] [&>svg]:h-5 [&>svg]:w-5">

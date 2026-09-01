@@ -64,7 +64,7 @@ const AboutHero = () => {
         >
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold rounded-full bg-[#8A08FA] text-white border border-white/80 shadow-[0_10px_30px_-8px_rgba(15,23,42,0.45)] hover:bg-[#EEF2FF] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-10px_rgba(124,58,237,0.55)] transition-all duration-300 group"
+            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold rounded-full bg-[#8A08FA] text-white border border-[#8A08FA] shadow-[0_10px_30px_-8px_rgba(15,23,42,0.45)] hover:bg-[#EEF2FF] hover:text-white hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-10px_rgba(124,58,237,0.55)] transition-all duration-300 group"
           >
             Start Your Project
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />

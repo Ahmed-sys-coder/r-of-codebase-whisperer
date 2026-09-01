@@ -53,7 +53,7 @@ const studies: Study[] = [
 ];
 
 const TechPill = ({ name }: { name: string }) => (
-  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/8 text-white border border-[#8A08FA]/15">
+  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/15 text-white border border-[#8A08FA]/15">
     {name}
   </span>
 );
@@ -62,7 +62,7 @@ const CardInner = ({ s, featured }: { s: Study; featured?: boolean }) => (
   <div
     className={`relative h-full grid ${
       featured ? "md:grid-cols-2" : "grid-cols-1"
-    } overflow-hidden rounded-2xl bg-[#8A08FA] border border-[#E2E8F0] shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#8A08FA]/25 transition-all duration-300`}
+    } overflow-hidden rounded-2xl bg-[#0A0A0A] border border-white/10 shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#8A08FA]/25 transition-all duration-300`}
   >
     <div
       className={`relative overflow-hidden ${

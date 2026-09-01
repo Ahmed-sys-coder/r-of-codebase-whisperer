@@ -101,7 +101,7 @@ const IMAGE_OVERRIDES: Record<string, string> = {
 };
 
 const TechPill = ({ name }: { name: string }) => (
-  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/8 text-white border border-[#8A08FA]/15">
+  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/15 text-white border border-[#8A08FA]/15">
     {name}
   </span>
 );
@@ -122,7 +122,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.05 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#8A08FA] border border-[#E2E8F0] shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#8A08FA]/25 transition-all duration-300"
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#0A0A0A] border border-white/10 shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#8A08FA]/25 transition-all duration-300"
     >
       <div className="relative h-[220px] md:h-[240px] overflow-hidden">
         <img
@@ -177,7 +177,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
               className="overflow-hidden"
             >
               <div className="pt-1 space-y-5">
-                <div className="p-4 rounded-xl bg-neutral-900 border border-slate-200/70">
+                <div className="p-4 rounded-xl bg-neutral-900 border border-white/10/70">
                   <div className="flex items-center gap-2 mb-1.5">
                     <Users size={13} className="text-neutral-400" />
                     <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
@@ -238,7 +238,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
                     {study.features.map((f) => (
                       <div
                         key={f}
-                        className="flex items-start gap-2 p-2.5 rounded-lg bg-neutral-900 border border-slate-200/70"
+                        className="flex items-start gap-2 p-2.5 rounded-lg bg-neutral-900 border border-white/10/70"
                       >
                         <Sparkles size={12} className="text-white mt-0.5 shrink-0" />
                         <span className="text-xs text-neutral-200 leading-relaxed">

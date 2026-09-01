@@ -388,13 +388,7 @@
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.6;
-    background-image:
-      linear-gradient(hsl(217 91% 55% / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(217 91% 55% / 0.06) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 0%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 0%, transparent 80%);
+    display: none;
   }
 
   /* Ambient blue/purple blob */
@@ -407,10 +401,7 @@
     height: 120vh;
     z-index: 0;
     pointer-events: none;
-    background:
-      radial-gradient(ellipse 45% 35% at 30% 30%, hsl(217 91% 55% / 0.1) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 32% at 75% 65%, hsl(258 90% 66% / 0.09) 0%, transparent 60%);
-    animation: glow-pulse 10s ease-in-out infinite alternate;
+    display: none;
   }
 
   @keyframes glow-pulse {
@@ -545,11 +536,8 @@
   .step-badge.tone-3,
   .step-badge.tone-4,
   .step-badge.tone-5 {
-    background: linear-gradient(135deg, hsl(217 91% 58% / 0.9) 0%, hsl(258 90% 64% / 0.9) 100%);
-    box-shadow:
-      inset 0 1px 0 hsl(0 0% 100% / 0.3),
-      inset 0 -10px 24px hsl(250 60% 20% / 0.45),
-      0 12px 32px -10px hsl(258 90% 66% / 0.5);
+    background: #0025CC;
+    box-shadow: none;
   }
 
 /* ============================================================
@@ -573,12 +561,9 @@
   perspective: 1000px;
   transform-style: preserve-3d;
   border-radius: 1.5rem;
-  background: linear-gradient(180deg, hsl(0 0% 100% / 0.9) 0%, hsl(210 40% 98% / 0.7) 100%);
-  border: 1px solid hsl(217 91% 55% / 0.18);
-  box-shadow:
-    inset 0 1px 0 0 hsl(0 0% 100% / 0.8),
-    0 18px 50px -20px hsl(217 91% 55% / 0.22),
-    0 0 0 1px hsl(217 91% 55% / 0.06);
+  background: #0A0A0A;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
   transition:
     transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.55s ease,
@@ -590,19 +575,14 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    linear-gradient(135deg, hsl(217 91% 55% / 0.06) 0%, hsl(0 0% 100% / 0) 40%),
-    radial-gradient(120% 80% at 100% 100%, hsl(258 90% 66% / 0.05) 0%, transparent 60%);
+  background: transparent;
   z-index: 0;
 }
 .card-3d > * { position: relative; z-index: 1; }
 .card-3d:hover {
   transform: translateY(-8px) scale(1.04) rotateX(2deg) rotateY(-2deg);
-  border-color: hsl(258 90% 66% / 0.5);
-  box-shadow:
-    inset 0 1px 0 0 hsl(0 0% 100% / 0.9),
-    0 28px 70px -20px hsl(258 90% 66% / 0.35),
-    0 0 0 1px hsl(258 90% 66% / 0.4);
+  border-color: #8A08FA;
+  box-shadow: 0 0 0 1px #8A08FA;
 }
 @media (prefers-reduced-motion: reduce) {
   .card-3d:hover { transform: none; }
@@ -615,8 +595,8 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
-          mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-image: none;
+          mask-image: none;
 }
 .tech-marquee-track {
   display: flex;
@@ -645,11 +625,8 @@
   .tech-marquee { -webkit-mask-image: none; mask-image: none; overflow-x: auto; }
 }
   .step-badge.tone-5 {
-    background: linear-gradient(135deg, hsl(217 91% 58% / 0.9) 0%, hsl(258 90% 64% / 0.9) 100%);
-    box-shadow:
-      inset 0 1px 0 hsl(0 0% 100% / 0.3),
-      inset 0 -10px 24px hsl(250 60% 20% / 0.45),
-      0 12px 32px -10px hsl(258 90% 66% / 0.5);
+    background: #0025CC;
+    box-shadow: none;
   }
 }
 
@@ -672,13 +649,9 @@
    Site Footer — high-contrast dark theme
    ============================================================ */
 .site-footer {
-  background:
-    radial-gradient(120% 70% at 0% 0%, hsl(258 60% 22% / 0.55), transparent 60%),
-    radial-gradient(110% 80% at 100% 100%, hsl(220 80% 28% / 0.5), transparent 60%),
-    linear-gradient(180deg, #0a0d2a 0%, #0b1245 50%, #100a36 100%);
-  color: #CBD5E1;
-  border-top: 2px solid;
-  border-image: linear-gradient(90deg, hsl(217 91% 55%), hsl(258 90% 66%)) 1;
+  background: #000000;
+  color: #E5E5E5;
+  border-top: 2px solid #8A08FA;
 }
 .site-footer .footer-heading {
   color: #FFFFFF;
@@ -697,7 +670,7 @@
 }
 .site-footer .footer-link:hover,
 .site-footer .footer-link:focus-visible {
-  color: #60A5FA;
+  color: #B583FF;
   transform: translateX(4px);
 }
 .site-footer p,
@@ -732,7 +705,7 @@
   background: rgba(255, 255, 255, 0.12);
   margin-bottom: 1.5rem;
 }
-.site-footer .footer-bottom { color: #94A3B8; }
+.site-footer .footer-bottom { color: #BDBDBD; }
 
 /* ============================================================
    Light-to-premium-gradient card hover
@@ -751,12 +724,9 @@
     box-shadow 0.5s ease,
     transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
     color 0.4s ease;
-  background: linear-gradient(135deg, hsl(217 91% 55%) 0%, hsl(245 80% 62%) 50%, hsl(268 89% 66%) 100%) !important;
-  border-color: hsl(258 90% 66% / 0.7) !important;
-  box-shadow:
-    0 28px 70px -20px hsl(258 90% 66% / 0.55),
-    0 0 0 1px hsl(258 90% 66% / 0.5),
-    inset 0 1px 0 hsl(0 0% 100% / 0.25) !important;
+  background: #8A08FA !important;
+  border-color: #8A08FA !important;
+  box-shadow: 0 0 0 1px #8A08FA !important;
   color: #ffffff !important;
 }
 .card-gradient-hover:hover h1,
@@ -837,8 +807,8 @@ p.uppercase.tracking-\[0\.3em\] ~ h2.text-gradient-headline {
   background: none !important;
   -webkit-background-clip: initial !important;
   background-clip: initial !important;
-  -webkit-text-fill-color: #334155 !important;
-  color: #334155 !important;
+  -webkit-text-fill-color: #D4D4D4 !important;
+  color: #D4D4D4 !important;
   max-width: 820px;
   margin-left: auto;
   margin-right: auto;
@@ -855,4 +825,21 @@ p.uppercase.tracking-\[0\.3em\] ~ h2.text-gradient-headline {
 }
 img {
   -webkit-user-drag: none;
+}
+
+/* ============================================================
+   Zero-gradient enforcement — neutralize any gradient that
+   arrives via inline styles or Tailwind gradient classes.
+   ============================================================ */
+[style*="gradient"],
+[class*="bg-gradient-"],
+[class*="from-["],
+[class*="via-["],
+[class*="to-["] {
+  background-image: none !important;
+}
+[style*="background-clip"],
+.bg-clip-text {
+  -webkit-text-fill-color: currentColor !important;
+  color: #8A08FA;
 }

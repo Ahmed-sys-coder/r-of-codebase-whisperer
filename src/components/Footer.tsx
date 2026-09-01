@@ -1,7 +1,7 @@
 import { Link } from "@/lib/router-compat";
 import { Mail, Linkedin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import logoCE from "@/assets/logo-ce.jpg";
+import logoCE from "@/assets/logo-code-envision.png";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const services = [
@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="site-footer relative z-10 px-6 pt-16 md:pt-24 pb-28 md:pb-32"
+      className="site-footer relative z-10 px-6 pt-16 md:pt-24 pb-6 md:pb-8"
     >
       <div className="w-full max-w-6xl mx-auto">
 

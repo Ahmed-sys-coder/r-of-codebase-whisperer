@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Bot, ChevronDown } from "lucide-react";
 import { useChatbot } from "@/hooks/useChatbot";
 import { SERVICE_NAV } from "@/components/services/serviceDetails";
-import logoCE from "@/assets/logo-ce.jpg";
+import logoCE from "@/assets/logo-code-envision.png";
 
 interface NavLinkItem {
   label: string;

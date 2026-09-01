@@ -18,10 +18,7 @@ const AboutHero = () => {
         {/* Dark overlay for text readability */}
         <div
           className="absolute inset-0"
-          style={{
-            background:
-              "#8A08FA",
-          }}
+          style={{ background: "rgba(0,0,0,0.72)" }}
         />
         {/* Subtle noise texture */}
         <div

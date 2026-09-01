@@ -438,7 +438,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                   href={cta}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-[hsl(258_60%_25%)] bg-white shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-transform"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-[hsl(258_60%_25%)] bg-[#8A08FA] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-transform"
                 >
                   Start Your Project
                   <ArrowRight size={16} />

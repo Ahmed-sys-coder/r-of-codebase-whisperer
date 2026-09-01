@@ -80,7 +80,7 @@ const Contact = () => {
                         boxShadow: "0 8px 24px -10px rgba(56,189,248,0.55)",
                       }}
                     >
-                      <Mail size={20} className="text-[#38BDF8]" />
+                      <Mail size={20} className="text-[#8A08FA]" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-[10px] uppercase tracking-[0.2em] text-dim font-medium mb-0.5">

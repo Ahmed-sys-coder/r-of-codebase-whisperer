@@ -134,14 +134,14 @@ const Navbar = () => {
           {navLinks.map((link) => {
             const active = isActive(link.href);
             const isServices = link.href === "/services";
-            const baseBtnClass = `relative px-[20px] py-[11px] text-[13.5px] font-medium tracking-tight rounded-full border border-transparent origin-center will-change-transform hover:bg-white hover:text-[#0F4594] hover:-translate-y-0.5 hover:scale-[1.12] hover:shadow-[0_12px_30px_rgba(15,69,148,0.18)] hover:border-[rgba(15,69,148,0.10)] ${
+            const baseBtnClass = `relative px-[20px] py-[11px] text-[13.5px] font-medium tracking-tight rounded-full border border-transparent origin-center will-change-transform hover:bg-[#8A08FA] hover:text-white hover:-translate-y-0.5 hover:scale-[1.12] hover:shadow-[0_12px_30px_rgba(15,69,148,0.18)] hover:border-[rgba(15,69,148,0.10)] ${
               active
                 ? onHero
                   ? "text-white font-semibold"
-                  : "text-[#0F4594] bg-[rgba(15,69,148,0.08)] font-semibold"
+                  : "text-white bg-[rgba(15,69,148,0.08)] font-semibold"
                 : onHero
                 ? "text-white"
-                : "text-[#0F172A]"
+                : "text-white"
             }`;
             const baseBtnStyle = {
               transition:
@@ -196,7 +196,7 @@ const Navbar = () => {
                                 key={s.slug}
                                 to={`/services/${s.slug}`}
                                 onClick={() => setServicesOpen(false)}
-                                className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-[#0F172A] hover:bg-transparent hover:from-[rgba(15,69,148,0.08)] hover:to-[rgba(124,58,237,0.08)] transition-colors"
+                                className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-white hover:bg-transparent hover:from-[rgba(15,69,148,0.08)] hover:to-[rgba(124,58,237,0.08)] transition-colors"
                               >
                                 <span
                                   className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-white shrink-0"
@@ -207,7 +207,7 @@ const Navbar = () => {
                                 >
                                   <SIcon size={16} />
                                 </span>
-                                <span className="leading-tight group-hover:text-[#0F4594]">
+                                <span className="leading-tight group-hover:text-white">
                                   {s.shortName}
                                 </span>
                               </Link>
@@ -261,7 +261,7 @@ const Navbar = () => {
         <button
           ref={toggleRef}
           onClick={() => setMobileOpen((v) => !v)}
-          className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-2xl text-[#0F172A] bg-white/70 hover:bg-white border border-[rgba(15,23,42,0.08)] shadow-[0_4px_14px_rgba(15,23,42,0.06)] transition-all duration-200 active:scale-95"
+          className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-2xl text-white bg-neutral-900 hover:bg-[#8A08FA] border border-[rgba(15,23,42,0.08)] shadow-[0_4px_14px_rgba(15,23,42,0.06)] transition-all duration-200 active:scale-95"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
@@ -330,7 +330,7 @@ const Navbar = () => {
                           borderRadius: "16px",
                           fontSize: "17px",
                           fontWeight: 500,
-                          color: active ? "#0F4594" : "#0F172A",
+                          color: active ? "#8A08FA" : "#FFFFFF",
                           background: active ? "rgba(15,69,148,0.08)" : "transparent",
                           border: "1px solid transparent",
                         }}
@@ -361,7 +361,7 @@ const Navbar = () => {
                                   setMobileOpen(false);
                                   setMobileServicesOpen(false);
                                 }}
-                                className="block px-3 py-2.5 rounded-xl text-[14px] font-semibold text-[#0F4594] hover:bg-[rgba(15,69,148,0.08)]"
+                                className="block px-3 py-2.5 rounded-xl text-[14px] font-semibold text-white hover:bg-[rgba(15,69,148,0.08)]"
                               >
                                 All Services
                               </Link>
@@ -375,7 +375,7 @@ const Navbar = () => {
                                       setMobileOpen(false);
                                       setMobileServicesOpen(false);
                                     }}
-                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[14px] text-[#0F172A] hover:bg-[rgba(15,69,148,0.06)]"
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[14px] text-white hover:bg-[rgba(15,69,148,0.06)]"
                                   >
                                     <span
                                       className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white shrink-0"
@@ -407,7 +407,7 @@ const Navbar = () => {
                       borderRadius: "16px",
                       fontSize: "17px",
                       fontWeight: 500,
-                      color: active ? "#0F4594" : "#0F172A",
+                      color: active ? "#8A08FA" : "#FFFFFF",
                       background: active ? "rgba(15,69,148,0.08)" : "transparent",
                       border: "1px solid transparent",
                       transition:

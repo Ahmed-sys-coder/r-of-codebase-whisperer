@@ -101,7 +101,7 @@ const IMAGE_OVERRIDES: Record<string, string> = {
 };
 
 const TechPill = ({ name }: { name: string }) => (
-  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#0F4594]/8 text-[#0F4594] border border-[#0F4594]/15">
+  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/8 text-white border border-[#8A08FA]/15">
     {name}
   </span>
 );
@@ -122,7 +122,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.05 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#0F4594]/25 transition-all duration-300"
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#8A08FA] border border-[#E2E8F0] shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#8A08FA]/25 transition-all duration-300"
     >
       <div className="relative h-[220px] md:h-[240px] overflow-hidden">
         <img
@@ -131,7 +131,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F4594]/55 via-[#1e3a8a]/35 to-[#7c3aed]/55 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#8A08FA]/55 via-[#1e3a8a]/35 to-[#7c3aed]/55 mix-blend-multiply" />
         <div className="absolute top-4 left-4">
           <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30">
             {study.category}
@@ -140,10 +140,10 @@ const CaseStudyCard = ({ study, index }: Props) => {
       </div>
 
       <div className="p-5 md:p-6 flex flex-col flex-1">
-        <h2 className="text-lg md:text-xl font-bold text-[#0F172A] tracking-[-0.01em] mb-2">
+        <h2 className="text-lg md:text-xl font-bold text-white tracking-[-0.01em] mb-2">
           {displayTitle}
         </h2>
-        <p className="text-[13px] text-slate-600 leading-[1.55] mb-4">
+        <p className="text-[13px] text-neutral-300 leading-[1.55] mb-4">
           {displayDescription}
         </p>
 
@@ -154,9 +154,9 @@ const CaseStudyCard = ({ study, index }: Props) => {
         </div>
 
         {headlineResult && (
-          <div className="flex items-start gap-2 mb-4 p-2.5 rounded-lg bg-gradient-to-r from-[#0F4594]/5 to-[#7c3aed]/5 border border-[#0F4594]/10">
-            <TrendingUp size={15} className="text-[#0F4594] shrink-0 mt-0.5" />
-            <p className="text-xs md:text-[13px] font-medium text-[#0F172A] leading-snug">
+          <div className="flex items-start gap-2 mb-4 p-2.5 rounded-lg bg-gradient-to-r from-[#8A08FA]/5 to-[#7c3aed]/5 border border-[#8A08FA]/10">
+            <TrendingUp size={15} className="text-white shrink-0 mt-0.5" />
+            <p className="text-xs md:text-[13px] font-medium text-white leading-snug">
               {headlineResult}
             </p>
           </div>
@@ -177,14 +177,14 @@ const CaseStudyCard = ({ study, index }: Props) => {
               className="overflow-hidden"
             >
               <div className="pt-1 space-y-5">
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+                <div className="p-4 rounded-xl bg-neutral-900 border border-slate-200/70">
                   <div className="flex items-center gap-2 mb-1.5">
-                    <Users size={13} className="text-slate-500" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
+                    <Users size={13} className="text-neutral-400" />
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
                       Client Background
                     </span>
                   </div>
-                  <p className="text-xs md:text-sm text-slate-700 leading-relaxed">
+                  <p className="text-xs md:text-sm text-neutral-200 leading-relaxed">
                     {study.clientBackground}
                   </p>
                 </div>
@@ -192,7 +192,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <AlertTriangle size={13} className="text-rose-500" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
                       The Problem
                     </span>
                   </div>
@@ -200,7 +200,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
                     {study.problems.map((p) => (
                       <li key={p} className="flex items-start gap-2.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-1.5 shrink-0" />
-                        <span className="text-xs md:text-sm text-slate-700 leading-relaxed">
+                        <span className="text-xs md:text-sm text-neutral-200 leading-relaxed">
                           {p}
                         </span>
                       </li>
@@ -210,8 +210,8 @@ const CaseStudyCard = ({ study, index }: Props) => {
 
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Compass size={13} className="text-[#7c3aed]" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
+                    <Compass size={13} className="text-[#8A08FA]" />
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
                       Our Approach
                     </span>
                   </div>
@@ -219,7 +219,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
                     {study.approach.map((a) => (
                       <li key={a} className="flex items-start gap-2.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#7c3aed] mt-1.5 shrink-0" />
-                        <span className="text-xs md:text-sm text-slate-700 leading-relaxed">
+                        <span className="text-xs md:text-sm text-neutral-200 leading-relaxed">
                           {a}
                         </span>
                       </li>
@@ -229,8 +229,8 @@ const CaseStudyCard = ({ study, index }: Props) => {
 
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Layers size={13} className="text-[#0F4594]" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
+                    <Layers size={13} className="text-white" />
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
                       Key Features
                     </span>
                   </div>
@@ -238,10 +238,10 @@ const CaseStudyCard = ({ study, index }: Props) => {
                     {study.features.map((f) => (
                       <div
                         key={f}
-                        className="flex items-start gap-2 p-2.5 rounded-lg bg-slate-50 border border-slate-200/70"
+                        className="flex items-start gap-2 p-2.5 rounded-lg bg-neutral-900 border border-slate-200/70"
                       >
-                        <Sparkles size={12} className="text-[#0F4594] mt-0.5 shrink-0" />
-                        <span className="text-xs text-slate-700 leading-relaxed">
+                        <Sparkles size={12} className="text-white mt-0.5 shrink-0" />
+                        <span className="text-xs text-neutral-200 leading-relaxed">
                           {f}
                         </span>
                       </div>
@@ -252,7 +252,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <BarChart3 size={13} className="text-emerald-600" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
                       Results
                     </span>
                   </div>
@@ -263,7 +263,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
                         className="flex items-start gap-2 p-2.5 rounded-lg bg-emerald-50/60 border border-emerald-200/60"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
-                        <span className="text-xs text-slate-700 leading-relaxed">
+                        <span className="text-xs text-neutral-200 leading-relaxed">
                           {r}
                         </span>
                       </div>
@@ -280,7 +280,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
             onClick={() => setExpanded(!expanded)}
             aria-expanded={expanded}
             aria-controls={panelId}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F4594] hover:text-[#7c3aed] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F4594]/40 rounded"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-[#8A08FA] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A08FA]/40 rounded"
           >
             {expanded ? "Hide Case Study" : "View Case Study"}
             {expanded ? (
@@ -294,7 +294,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
               href={study.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-auto inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#0F4594] transition-colors"
+              className="ml-auto inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-300 hover:text-white transition-colors"
             >
               Visit Site
               <ExternalLink size={12} />

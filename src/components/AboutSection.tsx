@@ -115,7 +115,7 @@ const AboutSection = () => {
                     className="group h-full rounded-2xl md:rounded-3xl p-6 md:p-8 text-center cursor-pointer
                       bg-white/[0.10] backdrop-blur-xl border border-white/[0.22]
                       transition-all duration-300 ease-out
-                      hover:bg-white hover:border-white/90
+                      hover:bg-[#8A08FA] hover:border-white/90
                       hover:-translate-y-2 hover:scale-[1.02]
                       hover:shadow-[0_20px_45px_rgba(0,0,0,0.18)]"
                   >
@@ -129,18 +129,18 @@ const AboutSection = () => {
                     >
                       <Icon
                         size={24}
-                        className="text-white/90 transition-colors duration-300 group-hover:text-[#3B0764]"
+                        className="text-white/90 transition-colors duration-300 group-hover:text-[#B583FF]"
                         strokeWidth={1.5}
                       />
                     </div>
 
                     {/* Number */}
-                    <p className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2 transition-colors duration-300 group-hover:text-[#3B0764]">
+                    <p className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2 transition-colors duration-300 group-hover:text-[#B583FF]">
                       <Counter target={stat.value} suffix={stat.suffix} />
                     </p>
 
                     {/* Label */}
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium transition-colors duration-300 group-hover:text-[#3B0764]">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium transition-colors duration-300 group-hover:text-[#B583FF]">
                       {stat.label}
                     </p>
                   </div>

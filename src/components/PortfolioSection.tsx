@@ -53,7 +53,7 @@ const studies: Study[] = [
 ];
 
 const TechPill = ({ name }: { name: string }) => (
-  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#0F4594]/8 text-[#0F4594] border border-[#0F4594]/15">
+  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/8 text-white border border-[#8A08FA]/15">
     {name}
   </span>
 );
@@ -62,7 +62,7 @@ const CardInner = ({ s, featured }: { s: Study; featured?: boolean }) => (
   <div
     className={`relative h-full grid ${
       featured ? "md:grid-cols-2" : "grid-cols-1"
-    } overflow-hidden rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#0F4594]/25 transition-all duration-300`}
+    } overflow-hidden rounded-2xl bg-[#8A08FA] border border-[#E2E8F0] shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#8A08FA]/25 transition-all duration-300`}
   >
     <div
       className={`relative overflow-hidden ${
@@ -75,7 +75,7 @@ const CardInner = ({ s, featured }: { s: Study; featured?: boolean }) => (
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F4594]/55 via-[#1e3a8a]/35 to-[#7c3aed]/55 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#8A08FA]/55 via-[#1e3a8a]/35 to-[#7c3aed]/55 mix-blend-multiply" />
       <div className="absolute top-4 left-4">
         <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30">
           {s.category}
@@ -85,13 +85,13 @@ const CardInner = ({ s, featured }: { s: Study; featured?: boolean }) => (
 
     <div className={`p-6 md:p-8 flex flex-col ${featured ? "md:p-10" : ""}`}>
       <h3
-        className={`font-bold text-[#0F172A] tracking-[-0.01em] mb-3 ${
+        className={`font-bold text-white tracking-[-0.01em] mb-3 ${
           featured ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
         }`}
       >
         {s.title}
       </h3>
-      <p className="text-sm text-slate-600 leading-relaxed mb-5">
+      <p className="text-sm text-neutral-300 leading-relaxed mb-5">
         {s.description}
       </p>
 
@@ -101,16 +101,16 @@ const CardInner = ({ s, featured }: { s: Study; featured?: boolean }) => (
         ))}
       </div>
 
-      <div className="flex items-start gap-2 mb-6 p-3 rounded-lg bg-gradient-to-r from-[#0F4594]/5 to-[#7c3aed]/5 border border-[#0F4594]/10">
-        <TrendingUp size={16} className="text-[#0F4594] shrink-0 mt-0.5" />
-        <p className="text-xs md:text-sm font-medium text-[#0F172A] leading-snug">
+      <div className="flex items-start gap-2 mb-6 p-3 rounded-lg bg-gradient-to-r from-[#8A08FA]/5 to-[#7c3aed]/5 border border-[#8A08FA]/10">
+        <TrendingUp size={16} className="text-white shrink-0 mt-0.5" />
+        <p className="text-xs md:text-sm font-medium text-white leading-snug">
           {s.result}
         </p>
       </div>
 
       <a
         href="/portfolio"
-        className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F4594] hover:text-[#7c3aed] transition-colors group/cta"
+        className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-[#8A08FA] transition-colors group/cta"
       >
         View Case Study
         <ArrowRight
@@ -170,7 +170,7 @@ const PortfolioSection = () => {
         <div className="text-center mt-12">
           <a
             href="/portfolio"
-            className="group inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#0F4594] to-[#7c3aed] shadow-[0_10px_30px_rgba(15,69,148,0.25)] hover:shadow-[0_14px_36px_rgba(124,58,237,0.35)] hover:-translate-y-0.5 transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#8A08FA] to-[#7c3aed] shadow-[0_10px_30px_rgba(15,69,148,0.25)] hover:shadow-[0_14px_36px_rgba(124,58,237,0.35)] hover:-translate-y-0.5 transition-all duration-300"
           >
             View All Case Studies
             <ArrowRight

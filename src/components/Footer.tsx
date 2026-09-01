@@ -1,7 +1,7 @@
 import { Link } from "@/lib/router-compat";
 import { Mail, Linkedin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import logoCE from "@/assets/logo-ce.jpg";
+import logoCE from "@/assets/logo-code-envision.png";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const services = [
@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="site-footer relative z-10 px-6 pt-16 md:pt-24 pb-28 md:pb-32"
+      className="site-footer relative z-10 px-6 pt-16 md:pt-24 pb-6 md:pb-8"
     >
       <div className="w-full max-w-6xl mx-auto">
 
@@ -50,7 +50,7 @@ const Footer = () => {
                 Code Envision Technologies
               </span>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed mb-5">
+            <p className="text-sm text-neutral-300 leading-relaxed mb-5">
               Code Envision Technologies is a Pakistan-based remote-first
               software engineering company building scalable AI, SaaS, web,
               mobile, and custom software solutions for businesses worldwide.
@@ -125,9 +125,9 @@ const Footer = () => {
           </div>
           <div className="md:col-span-2">
             <h4 className="footer-heading">Contact</h4>
-            <ul className="space-y-3 text-sm text-slate-300">
+            <ul className="space-y-3 text-sm text-neutral-300">
               <li className="flex items-start gap-2">
-                <Mail size={14} className="mt-1 text-slate-400 shrink-0" />
+                <Mail size={14} className="mt-1 text-neutral-400 shrink-0" />
                 <a
                   href="mailto:info.codeenvision@gmail.com"
                   className="footer-link break-all"
@@ -135,7 +135,7 @@ const Footer = () => {
                   info.codeenvision@gmail.com
                 </a>
               </li>
-              <li className="text-slate-400 leading-relaxed">
+              <li className="text-neutral-400 leading-relaxed">
                 Pakistan-based · Serving clients worldwide
               </li>
             </ul>
@@ -145,7 +145,7 @@ const Footer = () => {
         <div className="footer-divider" />
 
         <div className="footer-bottom flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span className="text-xs font-medium text-slate-400 text-center sm:text-left">
+          <span className="text-xs font-medium text-neutral-400 text-center sm:text-left">
             &copy; {new Date().getFullYear()} Code Envision Technologies. All rights reserved.
           </span>
           <div className="flex items-center gap-6">

@@ -87,14 +87,14 @@ const ServiceDetailPage = ({ service }: Props) => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(135deg, hsl(225 70% 10% / 0.92) 0%, hsl(232 70% 18% / 0.88) 45%, hsl(265 70% 25% / 0.9) 100%)",
+                  "#8A08FA",
               }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at top, hsl(220 85% 55% / 0.25), transparent 60%), radial-gradient(ellipse at bottom, hsl(270 75% 55% / 0.25), transparent 60%)",
+                  "#8A08FA, #8A08FA",
               }}
             />
             <div className="relative z-10 w-full max-w-5xl mx-auto text-center">
@@ -156,14 +156,14 @@ const ServiceDetailPage = ({ service }: Props) => {
                               className="flex items-start gap-3 rounded-xl p-3.5 border border-[hsl(258_90%_66%/0.18)]"
                               style={{
                                 background:
-                                  "linear-gradient(135deg, hsl(220 85% 55% / 0.06), hsl(270 75% 60% / 0.06))",
+                                  "#8A08FA",
                               }}
                             >
                               <span
                                 className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white shrink-0"
                                 style={{
                                   background:
-                                    "linear-gradient(135deg, hsl(220 86% 48%), hsl(258 90% 60%))",
+                                    "#8A08FA",
                                 }}
                               >
                                 <CheckCircle2 size={16} />
@@ -208,7 +208,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(135deg, hsl(220 85% 35% / 0.35), hsl(270 75% 45% / 0.35))",
+                        "#8A08FA",
                     }}
                   />
                 </div>
@@ -250,7 +250,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                 className="relative rounded-3xl px-6 md:px-12 py-12 md:py-16 border border-white/15 overflow-hidden"
                 style={{
                   background:
-                    "linear-gradient(135deg, hsl(222 80% 32%) 0%, hsl(244 70% 38%) 45%, hsl(270 75% 50%) 100%)",
+                    "#8A08FA",
                   boxShadow:
                     "0 30px 80px -30px hsl(258 80% 40% / 0.55), inset 0 1px 0 hsl(0 0% 100% / 0.12)",
                 }}
@@ -259,7 +259,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(circle at 15% 10%, hsl(220 100% 70% / 0.35), transparent 45%), radial-gradient(circle at 85% 90%, hsl(280 100% 70% / 0.3), transparent 50%)",
+                      "#8A08FA, #8A08FA",
                   }}
                 />
                 <div className="relative">
@@ -328,7 +328,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                     className="absolute -top-3 left-5 inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white"
                     style={{
                       background:
-                        "linear-gradient(135deg, hsl(220 85% 55%), hsl(270 75% 60%))",
+                        "#8A08FA",
                     }}
                   >
                     {i + 1}
@@ -422,7 +422,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                 className="rounded-3xl px-6 md:px-12 py-12 md:py-16 text-center border border-white/10"
                 style={{
                   background:
-                    "linear-gradient(135deg, hsl(220 85% 45%) 0%, hsl(270 75% 55%) 100%)",
+                    "#8A08FA",
                   boxShadow:
                     "0 30px 80px -30px hsl(258 90% 50% / 0.7), inset 0 1px 0 hsl(0 0% 100% / 0.15)",
                 }}
@@ -438,7 +438,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                   href={cta}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-[hsl(258_60%_25%)] bg-white shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-transform"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#8A08FA] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-transform"
                 >
                   Start Your Project
                   <ArrowRight size={16} />

@@ -98,7 +98,7 @@ const TeamSection = () => {
             >
               <div className="relative p-6 md:p-8">
                 <div className="mb-5">
-                  <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-lg bg-white ring-1 ring-white/10">
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-lg bg-[#0A0A0A] ring-1 ring-white/10">
                     <TeamAvatar src={member.image} alt={member.alt} />
                   </div>
                 </div>
@@ -135,7 +135,7 @@ const TeamSection = () => {
                     className="w-full h-full"
                     style={{
                       background:
-                        "radial-gradient(circle at top right, hsl(260 80% 65% / 0.08), transparent 70%)",
+                        "#8A08FA",
                     }}
                   />
                 </div>

@@ -60,7 +60,7 @@ const NeuralNetworkBG = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < MAX_DIST) {
             const alpha = (1 - dist / MAX_DIST) * 0.35;
-            ctx.strokeStyle = `rgba(139,92,246,${alpha})`;
+            ctx.strokeStyle = `rgba(138,8,250,${alpha})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -70,12 +70,9 @@ const NeuralNetworkBG = () => {
         }
       }
       for (const n of nodes) {
-        const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 4);
-        grd.addColorStop(0, "rgba(147,197,253,0.95)");
-        grd.addColorStop(1, "rgba(99,102,241,0)");
-        ctx.fillStyle = grd;
+        ctx.fillStyle = "#8A08FA";
         ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r * 4, 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, n.r * 1.6, 0, Math.PI * 2);
         ctx.fill();
       }
       if (!reduceMotion) raf = requestAnimationFrame(draw);
@@ -111,42 +108,17 @@ const Hero = () => {
       id="home"
       className="relative min-h-[calc(85vh+100px)] md:min-h-[calc(90vh+100px)] flex flex-col items-center justify-center pt-28 pb-20 px-6 overflow-hidden"
     >
-      {/* Deep navy → purple base */}
+      {/* Solid black base */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-20"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, #1e1b4b 0%, #0b1437 55%, #060a24 100%)",
-        }}
+        style={{ background: "#000000" }}
       />
 
       {/* Animated AI neural network canvas */}
       <div className="absolute inset-0 -z-10 opacity-90">
         <NeuralNetworkBG />
       </div>
-
-      {/* Glow blobs */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div
-          className="absolute top-1/3 left-1/4 w-[560px] h-[560px] rounded-full blur-3xl opacity-50"
-          style={{ background: "radial-gradient(circle, rgba(59,130,246,0.35) 0%, transparent 70%)" }}
-        />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl opacity-45"
-          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.38) 0%, transparent 70%)" }}
-        />
-      </div>
-
-      {/* Readability overlay */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(6,10,36,0.55) 0%, rgba(6,10,36,0.15) 70%, transparent 100%)",
-        }}
-      />
 
       <div className="relative z-10 text-center w-full max-w-4xl mx-auto">
         <motion.h1
@@ -156,13 +128,7 @@ const Hero = () => {
           className="text-[2.25rem] sm:text-5xl md:text-6xl font-extrabold tracking-[-0.025em] leading-[1.08] mb-6 text-white"
         >
           Your Trusted{" "}
-          <span
-            className="bg-clip-text text-transparent"
-            style={{
-              backgroundImage:
-                "linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%)",
-            }}
-          >
+          <span style={{ color: "#8A08FA" }}>
             AI Development
           </span>{" "}
           Company

@@ -52,9 +52,9 @@ const FeatureCardItem = ({ feature, index }: { feature: FeatureCard; index: numb
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group flex items-start gap-4 p-5 rounded-2xl bg-white/70 border border-[hsl(var(--border))] shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.1)] hover:-translate-y-0.5 transition-all duration-300"
+      className="group flex items-start gap-4 p-5 rounded-2xl bg-neutral-900 border border-[hsl(var(--border))] shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.1)] hover:-translate-y-0.5 transition-all duration-300"
     >
-      <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--accent))] flex items-center justify-center shadow-sm">
+      <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-transparent from-[hsl(var(--primary))] to-[hsl(var(--accent))] flex items-center justify-center shadow-sm">
         <Icon size={20} className="text-white" />
       </div>
       <div>
@@ -120,7 +120,7 @@ const WhyChooseSection = () => {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, hsla(217, 91%, 55%, 0.08) 0%, hsla(258, 90%, 66%, 0.08) 100%)",
+                  background: "#8A08FA",
                 }}
               />
             </div>
@@ -128,7 +128,7 @@ const WhyChooseSection = () => {
             <div
               className="absolute -inset-4 -z-10 rounded-[2rem] opacity-40 blur-2xl pointer-events-none"
               style={{
-                background: "radial-gradient(circle at 50% 50%, hsla(217, 91%, 55%, 0.15), transparent 70%)",
+                background: "#8A08FA",
               }}
             />
           </motion.div>

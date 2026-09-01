@@ -92,7 +92,7 @@ const Services = () => {
                           className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white shrink-0"
                           style={{
                             background:
-                              "linear-gradient(135deg, hsl(220 86% 48%), hsl(258 90% 60%))",
+                              "#8A08FA",
                           }}
                         >
                           <SIcon size={18} />

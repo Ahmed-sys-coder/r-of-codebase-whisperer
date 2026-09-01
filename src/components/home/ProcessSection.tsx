@@ -50,7 +50,7 @@ const ProcessSection = () => (
       <div className="relative">
         {/* Desktop connector line */}
         <div
-          className="hidden md:block absolute top-12 left-[8%] right-[8%] h-px bg-gradient-to-r from-transparent via-[#0F4594]/30 to-transparent"
+          className="hidden md:block absolute top-12 left-[8%] right-[8%] h-px bg-gradient-to-r from-transparent via-[#8A08FA]/30 to-transparent"
           aria-hidden="true"
         />
         <div className="grid grid-cols-1 md:grid-cols-5 gap-5 md:gap-4 relative">
@@ -67,18 +67,18 @@ const ProcessSection = () => (
               {i < steps.length - 1 && (
                 <ArrowRight
                   size={16}
-                  className="hidden md:block absolute top-10 -right-3 z-10 text-[#0F4594]/50"
+                  className="hidden md:block absolute top-10 -right-3 z-10 text-white/50"
                   aria-hidden="true"
                 />
               )}
-              <div className="relative bg-white border border-[#E2E8F0] rounded-2xl p-6 h-full shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_36px_rgba(15,69,148,0.12)] hover:-translate-y-1 hover:border-[#0F4594]/20 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0F4594] to-[#7c3aed] flex items-center justify-center text-white text-sm font-bold shadow-[0_8px_20px_rgba(15,69,148,0.25)] mb-4">
+              <div className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-6 h-full shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_36px_rgba(15,69,148,0.12)] hover:-translate-y-1 hover:border-[#8A08FA]/20 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8A08FA] to-[#7c3aed] flex items-center justify-center text-white text-sm font-bold shadow-[0_8px_20px_rgba(15,69,148,0.25)] mb-4">
                   {s.n}
                 </div>
-                <h3 className="text-base font-semibold text-[#0F172A] mb-2 tracking-[-0.01em]">
+                <h3 className="text-base font-semibold text-white mb-2 tracking-[-0.01em]">
                   {s.title}
                 </h3>
-                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs md:text-sm text-neutral-300 leading-relaxed">
                   {s.desc}
                 </p>
               </div>

@@ -61,7 +61,7 @@ const IndustriesSection = () => (
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0F4594]/85 via-[#1e3a8a]/75 to-[#7c3aed]/80 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8A08FA]/85 via-[#1e3a8a]/75 to-[#7c3aed]/80 mix-blend-multiply" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="relative z-10 h-full w-full flex flex-col items-start justify-end p-5">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm border border-white/25 mb-3">

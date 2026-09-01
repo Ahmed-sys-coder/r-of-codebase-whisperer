@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Bot, ChevronDown } from "lucide-react";
 import { useChatbot } from "@/hooks/useChatbot";
 import { SERVICE_NAV } from "@/components/services/serviceDetails";
-import logoCE from "@/assets/logo-ce.jpg";
+import logoCE from "@/assets/logo-code-envision.png";
 
 interface NavLinkItem {
   label: string;
@@ -102,7 +102,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="fixed top-0 left-0 right-0 z-50 w-full"
       style={{
-        background: onHero ? "transparent" : "rgba(255,255,255,0.96)",
+        background: onHero ? "transparent" : "#000000",
         backdropFilter: onHero ? "none" : "blur(18px) saturate(150%)",
         WebkitBackdropFilter: onHero ? "none" : "blur(18px) saturate(150%)",
         borderBottom: onHero
@@ -134,14 +134,14 @@ const Navbar = () => {
           {navLinks.map((link) => {
             const active = isActive(link.href);
             const isServices = link.href === "/services";
-            const baseBtnClass = `relative px-[20px] py-[11px] text-[13.5px] font-medium tracking-tight rounded-full border border-transparent origin-center will-change-transform hover:bg-white hover:text-[#0F4594] hover:-translate-y-0.5 hover:scale-[1.12] hover:shadow-[0_12px_30px_rgba(15,69,148,0.18)] hover:border-[rgba(15,69,148,0.10)] ${
+            const baseBtnClass = `relative px-[20px] py-[11px] text-[13.5px] font-medium tracking-tight rounded-full border border-transparent origin-center will-change-transform hover:bg-[#8A08FA] hover:text-white hover:-translate-y-0.5 hover:scale-[1.12] hover:shadow-[0_12px_30px_rgba(15,69,148,0.18)] hover:border-[rgba(15,69,148,0.10)] ${
               active
                 ? onHero
                   ? "text-white font-semibold"
-                  : "text-[#0F4594] bg-[rgba(15,69,148,0.08)] font-semibold"
+                  : "text-white bg-[rgba(138,8,250,0.18)] font-semibold"
                 : onHero
                 ? "text-white"
-                : "text-[#0F172A]"
+                : "text-white"
             }`;
             const baseBtnStyle = {
               transition:
@@ -181,7 +181,7 @@ const Navbar = () => {
                           role="menu"
                           className="rounded-2xl p-3 grid grid-cols-2 gap-1"
                           style={{
-                            background: "rgba(255,255,255,0.98)",
+                            background: "#0A0A0A",
                             backdropFilter: "blur(18px) saturate(150%)",
                             WebkitBackdropFilter: "blur(18px) saturate(150%)",
                             border: "1px solid rgba(15,69,148,0.14)",
@@ -196,18 +196,18 @@ const Navbar = () => {
                                 key={s.slug}
                                 to={`/services/${s.slug}`}
                                 onClick={() => setServicesOpen(false)}
-                                className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-[#0F172A] hover:bg-gradient-to-r hover:from-[rgba(15,69,148,0.08)] hover:to-[rgba(124,58,237,0.08)] transition-colors"
+                                className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-white hover:bg-transparent hover:from-[rgba(138,8,250,0.18)] hover:to-[rgba(124,58,237,0.08)] transition-colors"
                               >
                                 <span
                                   className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-white shrink-0"
                                   style={{
                                     background:
-                                      "linear-gradient(135deg, hsl(220 86% 48%), hsl(258 90% 60%))",
+                                      "#8A08FA",
                                   }}
                                 >
                                   <SIcon size={16} />
                                 </span>
-                                <span className="leading-tight group-hover:text-[#0F4594]">
+                                <span className="leading-tight group-hover:text-white">
                                   {s.shortName}
                                 </span>
                               </Link>
@@ -240,7 +240,7 @@ const Navbar = () => {
           aria-label="Ask CodeEnvision AI"
           className="hidden lg:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-[13px] font-semibold text-white shrink-0 transition-all duration-300 ease-out cursor-pointer hover:-translate-y-0.5 hover:scale-[1.07]"
           style={{
-            background: "linear-gradient(135deg, hsl(220 86% 42%) 0%, hsl(220 86% 48%) 100%)",
+            background: "#8A08FA",
             boxShadow:
               "0 8px 22px -10px hsl(220 86% 42% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.25)",
           }}
@@ -261,7 +261,7 @@ const Navbar = () => {
         <button
           ref={toggleRef}
           onClick={() => setMobileOpen((v) => !v)}
-          className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-2xl text-[#0F172A] bg-white/70 hover:bg-white border border-[rgba(15,23,42,0.08)] shadow-[0_4px_14px_rgba(15,23,42,0.06)] transition-all duration-200 active:scale-95"
+          className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-2xl text-white bg-neutral-900 hover:bg-[#8A08FA] border border-white/12 shadow-[0_4px_14px_rgba(15,23,42,0.06)] transition-all duration-200 active:scale-95"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
@@ -306,7 +306,7 @@ const Navbar = () => {
             style={{
               width: "calc(100% - 32px)",
               maxWidth: "520px",
-              background: "rgba(255,255,255,0.96)",
+              background: "#000000",
               backdropFilter: "blur(18px) saturate(150%)",
               WebkitBackdropFilter: "blur(18px) saturate(150%)",
               border: "1px solid rgba(15,23,42,0.08)",
@@ -330,8 +330,8 @@ const Navbar = () => {
                           borderRadius: "16px",
                           fontSize: "17px",
                           fontWeight: 500,
-                          color: active ? "#0F4594" : "#0F172A",
-                          background: active ? "rgba(15,69,148,0.08)" : "transparent",
+                          color: active ? "#8A08FA" : "#FFFFFF",
+                          background: active ? "rgba(138,8,250,0.18)" : "transparent",
                           border: "1px solid transparent",
                         }}
                         aria-expanded={mobileServicesOpen}
@@ -361,7 +361,7 @@ const Navbar = () => {
                                   setMobileOpen(false);
                                   setMobileServicesOpen(false);
                                 }}
-                                className="block px-3 py-2.5 rounded-xl text-[14px] font-semibold text-[#0F4594] hover:bg-[rgba(15,69,148,0.08)]"
+                                className="block px-3 py-2.5 rounded-xl text-[14px] font-semibold text-white hover:bg-[rgba(138,8,250,0.18)]"
                               >
                                 All Services
                               </Link>
@@ -375,13 +375,13 @@ const Navbar = () => {
                                       setMobileOpen(false);
                                       setMobileServicesOpen(false);
                                     }}
-                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[14px] text-[#0F172A] hover:bg-[rgba(15,69,148,0.06)]"
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[14px] text-white hover:bg-[rgba(138,8,250,0.14)]"
                                   >
                                     <span
                                       className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white shrink-0"
                                       style={{
                                         background:
-                                          "linear-gradient(135deg, hsl(220 86% 48%), hsl(258 90% 60%))",
+                                          "#8A08FA",
                                       }}
                                     >
                                       <SIcon size={14} />
@@ -407,8 +407,8 @@ const Navbar = () => {
                       borderRadius: "16px",
                       fontSize: "17px",
                       fontWeight: 500,
-                      color: active ? "#0F4594" : "#0F172A",
-                      background: active ? "rgba(15,69,148,0.08)" : "transparent",
+                      color: active ? "#8A08FA" : "#FFFFFF",
+                      background: active ? "rgba(138,8,250,0.18)" : "transparent",
                       border: "1px solid transparent",
                       transition:
                         "background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
@@ -424,7 +424,7 @@ const Navbar = () => {
                 style={{
                   height: "54px",
                   fontSize: "15px",
-                  background: "linear-gradient(135deg, hsl(220 86% 42%) 0%, hsl(220 86% 48%) 100%)",
+                  background: "#8A08FA",
                   boxShadow:
                     "0 10px 26px -10px hsl(220 86% 42% / 0.55), inset 0 1px 0 hsl(0 0% 100% / 0.25)",
                 }}

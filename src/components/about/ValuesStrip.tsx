@@ -7,26 +7,26 @@ const values = [
     label: "Client Value",
     description:
       "We focus on building software solutions that solve real business problems and create measurable value for our clients.",
-    iconBg: "linear-gradient(135deg, rgba(15,69,148,0.12), rgba(37,99,235,0.10))",
-    iconColor: "#0F4594",
-    iconHoverColor: "#2563EB",
+    iconBg: "#8A08FA",
+    iconColor: "#8A08FA",
+    iconHoverColor: "#0025CC",
   },
   {
     icon: Cog,
     label: "Quality Engineering",
     description:
       "We write clean, scalable, and maintainable code so every product is reliable, secure, and ready to grow.",
-    iconBg: "linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.10))",
-    iconColor: "#2563EB",
-    iconHoverColor: "#7C3AED",
+    iconBg: "#8A08FA",
+    iconColor: "#0025CC",
+    iconHoverColor: "#8A08FA",
   },
   {
     icon: Shield,
     label: "Integrity",
     description:
       "We work with honesty, transparency, and clear communication throughout every stage of the project.",
-    iconBg: "linear-gradient(135deg, rgba(124,58,237,0.12), rgba(139,92,246,0.10))",
-    iconColor: "#7C3AED",
+    iconBg: "#8A08FA",
+    iconColor: "#8A08FA",
     iconHoverColor: "#8B5CF6",
   },
   {
@@ -34,26 +34,26 @@ const values = [
     label: "Accountability",
     description:
       "We take ownership of our work, timelines, decisions, and results to keep every project moving with confidence.",
-    iconBg: "linear-gradient(135deg, rgba(15,69,148,0.12), rgba(37,99,235,0.10))",
-    iconColor: "#0F4594",
-    iconHoverColor: "#2563EB",
+    iconBg: "#8A08FA",
+    iconColor: "#8A08FA",
+    iconHoverColor: "#0025CC",
   },
   {
     icon: Users,
     label: "Collaboration",
     description:
       "We work closely with clients as partners, combining technical expertise with their business vision.",
-    iconBg: "linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.10))",
-    iconColor: "#2563EB",
-    iconHoverColor: "#7C3AED",
+    iconBg: "#8A08FA",
+    iconColor: "#0025CC",
+    iconHoverColor: "#8A08FA",
   },
   {
     icon: TrendingUp,
     label: "Growth Mindset",
     description:
       "We design digital products that support long-term growth through better performance, automation, and user experience.",
-    iconBg: "linear-gradient(135deg, rgba(124,58,237,0.12), rgba(139,92,246,0.10))",
-    iconColor: "#7C3AED",
+    iconBg: "#8A08FA",
+    iconColor: "#8A08FA",
     iconHoverColor: "#8B5CF6",
   },
 ];
@@ -109,7 +109,7 @@ const ValuesStrip = () => {
                     />
                   </div>
 
-                  <h3 className="text-base md:text-lg font-semibold text-[#0B3D91] mb-2">
+                  <h3 className="text-base md:text-lg font-semibold text-white mb-2">
                     {value.label}
                   </h3>
 

@@ -19,7 +19,7 @@ const CaseStudyCTA = () => {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 50% 0%, hsl(260 80% 60% / 0.08), transparent 70%)",
+                "#8A08FA",
             }}
           />
 

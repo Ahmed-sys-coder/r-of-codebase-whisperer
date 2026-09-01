@@ -31,7 +31,7 @@ const FAQSection = ({
         className="w-full max-w-[1180px] mx-auto rounded-[28px] border border-[hsl(217_91%_55%/0.18)] px-5 sm:px-10 md:px-16 py-12 md:py-16"
         style={{
           background:
-            "linear-gradient(180deg, hsl(0 0% 100% / 0.95) 0%, hsl(217 91% 55% / 0.05) 100%)",
+            "#8A08FA",
           boxShadow:
             "0 24px 60px -24px hsl(217 91% 55% / 0.22), inset 0 1px 0 hsl(0 0% 100% / 0.8)",
         }}
@@ -56,7 +56,7 @@ const FAQSection = ({
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="group border border-[hsl(217_91%_55%/0.18)] rounded-2xl bg-white px-5 md:px-6 transition-all duration-300 hover:border-[hsl(220_86%_42%/0.55)] hover:shadow-[0_14px_32px_-16px_hsl(258_90%_66%/0.35)] data-[state=open]:border-[hsl(220_86%_42%/0.6)] data-[state=open]:shadow-[0_18px_40px_-18px_hsl(258_90%_66%/0.4)]"
+              className="group border border-[hsl(217_91%_55%/0.18)] rounded-2xl bg-[#0A0A0A] px-5 md:px-6 transition-all duration-300 hover:border-[hsl(220_86%_42%/0.55)] hover:shadow-[0_14px_32px_-16px_hsl(258_90%_66%/0.35)] data-[state=open]:border-[hsl(220_86%_42%/0.6)] data-[state=open]:shadow-[0_18px_40px_-18px_hsl(258_90%_66%/0.4)]"
               style={{ boxShadow: "0 4px 14px -8px hsl(217 91% 55% / 0.12)" }}
             >
               <AccordionTrigger className="text-left text-[15px] md:text-base font-semibold py-4 md:py-5 text-[hsl(222_47%_11%)] hover:no-underline [&>svg]:text-[hsl(220_86%_42%)] [&>svg]:h-5 [&>svg]:w-5">

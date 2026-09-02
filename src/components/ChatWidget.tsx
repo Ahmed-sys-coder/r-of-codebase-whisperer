@@ -193,7 +193,7 @@ const ChatWidget = () => {
               zIndex: 9999,
               width: "100vw",
               height: "100vh",
-              background: "#8A08FA",
+              background: "#F6F7FB",
             }}
             role="dialog"
             aria-modal="true"
@@ -201,13 +201,13 @@ const ChatWidget = () => {
           >
             {/* Top Header */}
             <header
-              className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b bg-neutral-900 backdrop-blur-md"
-              style={{ borderColor: "#e2e8f0" }}
+              className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b bg-white backdrop-blur-md"
+              style={{ borderColor: "#E5E7EB" }}
             >
               <div className="flex items-center gap-3 min-w-0">
                 <button
                   onClick={() => setSidebarOpen((v) => !v)}
-                  className="p-2 rounded-lg text-neutral-300 hover:bg-neutral-900 transition-colors"
+                  className="p-2 rounded-lg text-[#4B5563] hover:bg-[#F1F2F7] hover:text-[#8A08FA] transition-colors"
                   aria-label="Toggle sidebar"
                 >
                   {sidebarOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
@@ -220,8 +220,8 @@ const ChatWidget = () => {
                     <Sparkles size={18} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-semibold text-white truncate">Code Envision AI</p>
-                    <p className="text-[11px] text-neutral-400">Your enterprise AI assistant</p>
+                    <p className="text-sm font-semibold text-[#111827] truncate">Code Envision AI</p>
+                    <p className="text-[11px] text-[#6B7280]">Your enterprise AI assistant</p>
                   </div>
                 </div>
               </div>
@@ -236,13 +236,13 @@ const ChatWidget = () => {
                 </button>
                 <button
                   onClick={handleClearChat}
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-white/10 text-neutral-200 hover:bg-neutral-900 transition-colors"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-[#E5E7EB] text-[#374151] hover:bg-[#F1F2F7] transition-colors"
                 >
                   <Trash2 size={14} /> Clear Chat
                 </button>
                 <button
                   onClick={closeChatbot}
-                  className="p-2 rounded-lg text-neutral-300 hover:bg-neutral-900 transition-colors"
+                  className="p-2 rounded-lg text-[#4B5563] hover:bg-[#F1F2F7] hover:text-[#8A08FA] transition-colors"
                   aria-label="Close chat"
                 >
                   <X size={20} />
@@ -261,8 +261,8 @@ const ChatWidget = () => {
                     animate={{ width: 280, opacity: 1 }}
                     exit={{ width: 0, opacity: 0 }}
                     transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="hidden md:flex flex-col border-r bg-neutral-900/60 overflow-hidden shrink-0"
-                    style={{ borderColor: "#e2e8f0" }}
+                    className="hidden md:flex flex-col border-r bg-[#F1F2F8] overflow-hidden shrink-0"
+                    style={{ borderColor: "#E5E7EB" }}
                   >
                     <div className="p-3">
                       <button
@@ -273,7 +273,7 @@ const ChatWidget = () => {
                         <Plus size={16} /> New chat
                       </button>
                     </div>
-                    <div className="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
+                    <div className="px-3 pb-2 text-[11px] font-semibold uppercase tracking-wider text-[#6B7280]">
                       Recent
                     </div>
                     <div className="flex-1 overflow-y-auto px-2 pb-3 space-y-1">
@@ -283,16 +283,16 @@ const ChatWidget = () => {
                           onClick={() => setActiveId(s.id)}
                           className={`w-full text-left flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors truncate ${
                             s.id === activeId
-                              ? "bg-[#0A0A0A] shadow-sm text-white border border-white/10"
-                              : "text-neutral-300 hover:bg-neutral-900"
+                              ? "bg-white shadow-sm text-[#111827] border border-[#E5E7EB]"
+                              : "text-[#4B5563] hover:bg-[#E7E9F2]"
                           }`}
                         >
-                          <MessageSquare size={14} className="shrink-0 text-neutral-400" />
+                          <MessageSquare size={14} className="shrink-0 text-[#9CA3AF]" />
                           <span className="truncate">{s.title}</span>
                         </button>
                       ))}
                     </div>
-                    <div className="p-3 border-t text-[11px] text-neutral-400" style={{ borderColor: "#e2e8f0" }}>
+                    <div className="p-3 border-t text-[11px] text-[#6B7280]" style={{ borderColor: "#E5E7EB" }}>
                       Powered by Code Envision Technologies
                     </div>
                   </motion.aside>
@@ -311,10 +311,10 @@ const ChatWidget = () => {
                         >
                           <Sparkles size={26} />
                         </div>
-                        <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-[#111827]">
                           How can I help you today?
                         </h2>
-                        <p className="mt-2 text-sm text-neutral-400 max-w-md">
+                        <p className="mt-2 text-sm text-[#6B7280] max-w-md">
                           Ask about our services, share a project idea, or pick a prompt below to get started.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-3 mt-8 w-full max-w-2xl">
@@ -322,11 +322,11 @@ const ChatWidget = () => {
                             <button
                               key={p.title}
                               onClick={() => sendMessage(p.prompt)}
-                              className="text-left p-4 rounded-xl border bg-[#0A0A0A] hover:border-[#8A08FA] hover:shadow-md transition-all hover:-translate-y-0.5"
-                              style={{ borderColor: "#e2e8f0" }}
+                              className="text-left p-4 rounded-xl border bg-white hover:border-[#8A08FA] hover:shadow-[0_14px_34px_-20px_rgba(138,8,250,0.55)] transition-all hover:-translate-y-0.5"
+                              style={{ borderColor: "#E5E7EB" }}
                             >
-                              <p className="text-sm font-semibold text-white">{p.title}</p>
-                              <p className="text-xs text-neutral-400 mt-1">{p.subtitle}</p>
+                              <p className="text-sm font-semibold text-[#111827]">{p.title}</p>
+                              <p className="text-xs text-[#6B7280] mt-1">{p.subtitle}</p>
                             </button>
                           ))}
                         </div>
@@ -349,7 +349,7 @@ const ChatWidget = () => {
                                 background:
                                   msg.sender === "bot"
                                     ? "#8A08FA"
-                                    : "#0f172a",
+                                    : "#0025CC",
                               }}
                             >
                               {msg.sender === "bot" ? <Sparkles size={14} /> : <User size={14} />}
@@ -359,18 +359,18 @@ const ChatWidget = () => {
                                 className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
                                   msg.sender === "user"
                                     ? "text-white rounded-tr-md"
-                                    : "bg-[#0A0A0A] text-white border rounded-tl-md"
+                                    : "bg-white text-[#111827] border rounded-tl-md"
                                 }`}
                                 style={
                                   msg.sender === "user"
                                     ? { background: "#8A08FA" }
-                                    : { borderColor: "#e2e8f0" }
+                                    : { borderColor: "#E5E7EB" }
                                 }
                               >
                                 {msg.text}
                               </div>
                               <p
-                                className={`text-[10px] mt-1 text-neutral-400 ${
+                                className={`text-[10px] mt-1 text-[#9CA3AF] ${
                                   msg.sender === "user" ? "text-right" : ""
                                 }`}
                               >
@@ -389,12 +389,12 @@ const ChatWidget = () => {
                               <Sparkles size={14} />
                             </div>
                             <div
-                              className="px-4 py-3 rounded-2xl bg-[#0A0A0A] border flex items-center gap-1"
-                              style={{ borderColor: "#e2e8f0" }}
+                              className="px-4 py-3 rounded-2xl bg-white border flex items-center gap-1"
+                              style={{ borderColor: "#E5E7EB" }}
                             >
-                              <span className="w-2 h-2 bg-neutral-700 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                              <span className="w-2 h-2 bg-neutral-700 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                              <span className="w-2 h-2 bg-neutral-700 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                              <span className="w-2 h-2 bg-[#C7CAD6] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                              <span className="w-2 h-2 bg-[#C7CAD6] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                              <span className="w-2 h-2 bg-[#C7CAD6] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                             </div>
                           </div>
                         )}
@@ -405,11 +405,11 @@ const ChatWidget = () => {
                 </div>
 
                 {/* Input */}
-                <div className="border-t bg-neutral-900 backdrop-blur-md" style={{ borderColor: "#e2e8f0" }}>
+                <div className="border-t bg-white backdrop-blur-md" style={{ borderColor: "#E5E7EB" }}>
                   <div className="max-w-3xl mx-auto w-full px-4 sm:px-6 py-4">
                     <div
-                      className="flex items-end gap-2 p-2 rounded-2xl border bg-[#0A0A0A] shadow-sm focus-within:border-[#8A08FA] focus-within:shadow-md transition-all"
-                      style={{ borderColor: "#e2e8f0" }}
+                      className="flex items-end gap-2 p-2 rounded-2xl border bg-[#F6F7FB] shadow-sm focus-within:border-[#8A08FA] focus-within:shadow-md transition-all"
+                      style={{ borderColor: "#E5E7EB" }}
                     >
                       <textarea
                         ref={inputRef}
@@ -423,7 +423,7 @@ const ChatWidget = () => {
                         }}
                         rows={1}
                         placeholder="Message Code Envision AI..."
-                        className="flex-1 resize-none bg-transparent text-sm text-white placeholder:text-neutral-400 outline-none px-3 py-2 max-h-40"
+                        className="flex-1 resize-none bg-transparent text-sm text-[#111827] placeholder:text-[#9CA3AF] outline-none px-3 py-2 max-h-40"
                       />
                       <button
                         onClick={() => sendMessage(input)}
@@ -435,7 +435,7 @@ const ChatWidget = () => {
                         <Send size={16} />
                       </button>
                     </div>
-                    <p className="text-[11px] text-neutral-400 text-center mt-2">
+                    <p className="text-[11px] text-[#6B7280] text-center mt-2">
                       Code Envision AI may produce inaccurate information. Verify important details with our team.
                     </p>
                   </div>

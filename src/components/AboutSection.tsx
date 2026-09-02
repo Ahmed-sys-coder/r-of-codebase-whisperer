@@ -52,7 +52,7 @@ const AboutSection = () => {
       <div
         className="absolute inset-0 -z-10"
         style={{
-          background: "#8A08FA",
+          background: "#0025CC",
           backgroundSize: "400% 400%",
           animation: "gradientShift 15s ease infinite",
         }}
@@ -63,7 +63,7 @@ const AboutSection = () => {
         className="absolute inset-0 -z-10 pointer-events-none"
         style={{
           background:
-            "#8A08FA",
+            "transparent",
         }}
       />
 
@@ -89,7 +89,7 @@ const AboutSection = () => {
           >
             <h2
               className="font-bold tracking-tight mb-6 text-[26px] sm:text-[30px] md:text-[36px] lg:text-[48px] leading-[1.15] text-white"
-              style={{ textShadow: "0 4px 20px rgba(15, 69, 148, 0.35)" }}
+              style={{ textShadow: "0 4px 20px rgba(0,0,0,0.25)" }}
             >
               Why Choose Code Envision Technologies
             </h2>
@@ -125,22 +125,22 @@ const AboutSection = () => {
                         bg-white/[0.15] border border-white/[0.25]
                         transition-all duration-300 ease-out
                         group-hover:scale-110 group-hover:-translate-y-1
-                        group-hover:bg-[#3B0764]/10 group-hover:border-[#3B0764]/30"
+                        group-hover:bg-white/20 group-hover:border-white/40"
                     >
                       <Icon
                         size={24}
-                        className="text-white/90 transition-colors duration-300 group-hover:text-[#B583FF]"
+                        className="text-white/90 transition-colors duration-300 group-hover:text-white"
                         strokeWidth={1.5}
                       />
                     </div>
 
                     {/* Number */}
-                    <p className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2 transition-colors duration-300 group-hover:text-[#B583FF]">
+                    <p className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2 transition-colors duration-300 group-hover:text-white">
                       <Counter target={stat.value} suffix={stat.suffix} />
                     </p>
 
                     {/* Label */}
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium transition-colors duration-300 group-hover:text-[#B583FF]">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium transition-colors duration-300 group-hover:text-white">
                       {stat.label}
                     </p>
                   </div>

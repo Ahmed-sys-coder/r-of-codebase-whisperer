@@ -49,28 +49,28 @@
   :root {
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
-    --card: 0 0% 5%;
+    --card: 240 12% 8%;
     --card-foreground: 0 0% 100%;
-    --popover: 0 0% 5%;
+    --popover: 240 12% 8%;
     --popover-foreground: 0 0% 100%;
-    --primary: 229 100% 40%;
+    --primary: 272 94% 51%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 272 94% 51%;
     --primary-blue: 229 100% 40%;
     --primary-cyan: 229 100% 40%;
     --secondary: 272 94% 51%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 9%;
+    --muted: 240 10% 12%;
     --muted-foreground: 0 0% 72%;
     --accent: 272 94% 51%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
+    --border: 240 8% 22%;
+    --input: 240 8% 22%;
     --ring: 272 94% 51%;
     --radius: 0.75rem;
-    --glass-bg: 0 0% 5%;
+    --glass-bg: 240 12% 9%;
     --glass-border: 0 0% 100% / 0.12;
     --glass-border-hover: 272 94% 51% / 0.6;
     --glow-purple: 272 94% 51%;
@@ -134,7 +134,7 @@
   }
 
   .glass {
-    background: #0A0A0A;
+    background: #14141C;
     border: 1px solid hsl(var(--glass-border));
     box-shadow: none;
   }
@@ -156,7 +156,7 @@
   /* Premium card — solid dark surface */
   .premium-card {
     position: relative;
-    background: #0A0A0A;
+    background: #15151F;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 1.5rem;
     box-shadow: none;
@@ -260,16 +260,17 @@
     font-size: 0.875rem;
     font-weight: 600;
     color: #FFFFFF;
-    background: #0025CC;
-    border: 1px solid #0025CC;
+    background: #8A08FA;
+    border: 1px solid #8A08FA;
     box-shadow: none;
     transition: transform 0.35s ease, background 0.3s ease, border-color 0.3s ease;
   }
   .btn-white-cta:hover {
     transform: translateY(-2px);
-    background: #8A08FA;
+    background: #0025CC;
     color: #FFFFFF;
-    border-color: #8A08FA;
+    border-color: #0025CC;
+    box-shadow: 0 16px 36px -20px rgba(0, 37, 204, 0.75);
   }
   .btn-white-cta:focus-visible {
     outline: 2px solid #8A08FA;
@@ -287,8 +288,8 @@
   }
   .btn-ghost-purple:hover {
     color: #FFFFFF;
-    background: #8A08FA;
-    border-color: #8A08FA !important;
+    background: #0025CC;
+    border-color: #0025CC !important;
     box-shadow: none;
     transform: translateY(-2px);
   }
@@ -305,9 +306,9 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
-    color: #E5E5E5;
-    background: #0A0A0A;
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #EDEDF2;
+    background: #17171F;
+    border: 1px solid rgba(255, 255, 255, 0.16);
     max-width: 100%;
     min-width: 0;
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
@@ -324,7 +325,7 @@
   .tech-chip:hover {
     transform: translateY(-2px) scale(1.03);
     color: #FFFFFF;
-    background: #111111;
+    background: #221033;
     border-color: #8A08FA;
     box-shadow: none;
   }
@@ -842,4 +843,15 @@ img {
 .bg-clip-text {
   -webkit-text-fill-color: currentColor !important;
   color: #8A08FA;
+}
+
+
+/* ── Global button color contract: #8A08FA base → #0025CC on hover ── */
+button[class*="bg-[#8A08FA]"]:hover,
+a[class*="bg-[#8A08FA]"]:hover,
+button.bg-primary:hover,
+a.bg-primary:hover,
+.btn-primary-brand:hover {
+  background-color: #0025CC !important;
+  border-color: #0025CC !important;
 }

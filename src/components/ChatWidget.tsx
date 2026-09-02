@@ -229,8 +229,7 @@ const ChatWidget = () => {
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleNewChat}
-                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-white transition-all hover:shadow-md hover:-translate-y-0.5"
-                  style={{ background: "#8A08FA" }}
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-white bg-[#8A08FA] hover:bg-[#0025CC] transition-all hover:shadow-md hover:-translate-y-0.5"
                 >
                   <Plus size={14} /> New Chat
                 </button>
@@ -267,8 +266,7 @@ const ChatWidget = () => {
                     <div className="p-3">
                       <button
                         onClick={handleNewChat}
-                        className="w-full flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-lg text-white transition-all hover:shadow-md"
-                        style={{ background: "#8A08FA" }}
+                        className="w-full flex items-center gap-2 px-3 py-2.5 text-sm font-medium rounded-lg text-white bg-[#8A08FA] hover:bg-[#0025CC] transition-all hover:shadow-md"
                       >
                         <Plus size={16} /> New chat
                       </button>
@@ -428,8 +426,7 @@ const ChatWidget = () => {
                       <button
                         onClick={() => sendMessage(input)}
                         disabled={!input.trim()}
-                        className="w-10 h-10 rounded-xl flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:shadow-md"
-                        style={{ background: "#8A08FA" }}
+                        className="w-10 h-10 rounded-xl flex items-center justify-center text-white bg-[#8A08FA] hover:bg-[#0025CC] disabled:opacity-30 disabled:cursor-not-allowed transition-all hover:shadow-md"
                         aria-label="Send message"
                       >
                         <Send size={16} />

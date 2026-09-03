@@ -4,4 +4,4 @@
 - [x] Remove the footer divider line and improve footer logo presentation.
 - [x] Rename values and align value/service hover colors with the brand palette.
 - [x] Replace homepage generic services with the dedicated service catalog.
-- [ ] Verify routes, smoke test, and visual rendering.
+- [x] Verify routes, smoke test, and visual rendering.

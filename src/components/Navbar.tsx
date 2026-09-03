@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Bot, ChevronDown } from "lucide-react";
 import { useChatbot } from "@/hooks/useChatbot";
 import { SERVICE_NAV } from "@/components/services/serviceDetails";
-import logoCE from "@/assets/logo-code-envision.png";
+import logoCE from "@/assets/cet-logo.png";
 
 interface NavLinkItem {
   label: string;
@@ -120,12 +120,12 @@ const Navbar = () => {
         <Link
           to="/"
           aria-label="Go to homepage"
-          className="flex items-center shrink-0 h-full py-1 px-2 rounded-2xl transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.08] hover:shadow-[0_12px_32px_rgba(37,99,235,0.22)]"
+          className="flex items-center shrink-0 h-full transition-transform duration-300 ease-out hover:scale-[1.04]"
         >
           <img
             src={logoCE}
             alt="Code Envision Technologies"
-            className="h-[44px] md:h-[64px] w-auto object-contain"
+            className="h-[58px] md:h-[80px] w-auto object-contain select-none"
           />
         </Link>
 
@@ -193,11 +193,7 @@ const Navbar = () => {
                                 className="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium text-[#111827] hover:bg-[rgba(138,8,250,0.08)] hover:text-[#8A08FA] transition-colors"
                               >
                                 <span
-                                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-white shrink-0"
-                                  style={{
-                                    background:
-                                      "#8A08FA",
-                                  }}
+                                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-white shrink-0 bg-[#8A08FA] group-hover:bg-[#0025CC] transition-colors duration-300"
                                 >
                                   <SIcon size={16} />
                                 </span>

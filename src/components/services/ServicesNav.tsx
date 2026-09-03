@@ -40,10 +40,10 @@ const ServicesNav = () => {
                 <a
                   key={service.id}
                   href={`#${service.id}`}
-                  className="group flex flex-col items-center gap-2 px-3 py-3 rounded-xl text-center hover:bg-[hsl(0_0%_100%/0.04)] transition-colors duration-300"
+                  className="group flex flex-col items-center gap-2 px-3 py-3 rounded-xl text-center hover:bg-[rgba(0,37,204,0.12)] transition-colors duration-300"
                 >
                   <PremiumIconBadge icon={meta.icon} tone={meta.tone} size="sm" />
-                  <span className="text-[10px] md:text-[11px] font-medium text-silver group-hover:text-foreground transition-colors duration-300 leading-tight">
+                  <span className="text-[10px] md:text-[11px] font-medium text-silver group-hover:text-[#0025CC] transition-colors duration-300 leading-tight">
                     {meta.label}
                   </span>
                 </a>

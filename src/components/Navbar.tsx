@@ -125,7 +125,7 @@ const Navbar = () => {
           <img
             src={logoCE}
             alt="Code Envision Technologies"
-            className="h-[68px] md:h-[84px] w-[112px] md:w-[128px] object-cover object-center select-none"
+            className="h-[68px] w-[68px] md:h-[84px] md:w-[84px] object-contain select-none"
           />
         </Link>
 

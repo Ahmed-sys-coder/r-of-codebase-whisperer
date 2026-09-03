@@ -142,7 +142,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-divider" />
+        
 
         <div className="footer-bottom flex flex-col sm:flex-row items-center justify-between gap-3">
           <span className="text-xs font-medium text-neutral-400 text-center sm:text-left">

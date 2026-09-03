@@ -1,7 +1,7 @@
 import { Link } from "@/lib/router-compat";
 import { Mail, Linkedin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import logoCE from "@/assets/cet-logo.png";
+import logoCE from "@/assets/CET_logo.svg";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const services = [

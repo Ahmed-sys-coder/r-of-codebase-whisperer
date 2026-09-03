@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Bot, ChevronDown } from "lucide-react";
 import { useChatbot } from "@/hooks/useChatbot";
 import { SERVICE_NAV } from "@/components/services/serviceDetails";
-import logoCE from "@/assets/cet-logo.png";
+import logoCE from "@/assets/CET_logo.svg";
 
 interface NavLinkItem {
   label: string;
@@ -125,7 +125,7 @@ const Navbar = () => {
           <img
             src={logoCE}
             alt="Code Envision Technologies"
-            className="h-[58px] md:h-[80px] w-auto object-contain select-none"
+            className="h-[68px] md:h-[84px] w-[112px] md:w-[128px] object-cover object-center select-none"
           />
         </Link>
 

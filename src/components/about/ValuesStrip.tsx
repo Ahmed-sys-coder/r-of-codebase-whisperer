@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Gem, Cog, Shield, ClipboardCheck, Users, TrendingUp } from "lucide-react";
+import { Gem, Cog, ShieldCheck, BadgeCheck, Users, Layers } from "lucide-react";
 
 const values = [
   {
@@ -21,8 +21,8 @@ const values = [
     iconHoverColor: "#8A08FA",
   },
   {
-    icon: Shield,
-    label: "Integrity",
+    icon: ShieldCheck,
+    label: "Transparency",
     description:
       "We work with honesty, transparency, and clear communication throughout every stage of the project.",
     iconBg: "#8A08FA",
@@ -30,8 +30,8 @@ const values = [
     iconHoverColor: "#8B5CF6",
   },
   {
-    icon: ClipboardCheck,
-    label: "Accountability",
+    icon: BadgeCheck,
+    label: "Ownership",
     description:
       "We take ownership of our work, timelines, decisions, and results to keep every project moving with confidence.",
     iconBg: "#8A08FA",
@@ -48,8 +48,8 @@ const values = [
     iconHoverColor: "#8A08FA",
   },
   {
-    icon: TrendingUp,
-    label: "Growth Mindset",
+    icon: Layers,
+    label: "Scalability",
     description:
       "We design digital products that support long-term growth through better performance, automation, and user experience.",
     iconBg: "#8A08FA",
@@ -95,18 +95,8 @@ const ValuesStrip = () => {
                   transition={{ duration: 0.45, delay: i * 0.08 }}
                   className="premium-card glass-hover group p-6 md:p-8 flex flex-col"
                 >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-500"
-                    style={{
-                      background: value.iconBg,
-                      boxShadow: `0 8px 22px -10px ${value.iconColor}33`,
-                    }}
-                  >
-                    <Icon
-                      size={22}
-                      className="transition-colors duration-500"
-                      style={{ color: value.iconColor }}
-                    />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-[#8A08FA] group-hover:bg-[#0025CC] shadow-[0_10px_26px_-12px_rgba(138,8,250,0.6)] transition-colors duration-500">
+                    <Icon size={22} className="text-white" />
                   </div>
 
                   <h3 className="text-base md:text-lg font-semibold text-white mb-2">

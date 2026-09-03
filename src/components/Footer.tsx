@@ -1,7 +1,7 @@
 import { Link } from "@/lib/router-compat";
 import { Mail, Linkedin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import logoCE from "@/assets/logo-code-envision.png";
+import logoCE from "@/assets/CET_logo.svg";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const services = [
@@ -39,7 +39,7 @@ const Footer = () => {
           {/* Brand blurb */}
           <div className="md:col-span-4">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-14 h-14 rounded-2xl bg-white/[0.06] ring-1 ring-white/15 flex items-center justify-center overflow-hidden p-1.5 shrink-0">
+              <div className="w-16 h-16 rounded-2xl bg-white ring-1 ring-white/25 flex items-center justify-center overflow-hidden p-1.5 shrink-0">
                 <img
                   src={logoCE}
                   alt="Code Envision Technologies logo"
@@ -142,7 +142,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-divider" />
+        
 
         <div className="footer-bottom flex flex-col sm:flex-row items-center justify-between gap-3">
           <span className="text-xs font-medium text-neutral-400 text-center sm:text-left">

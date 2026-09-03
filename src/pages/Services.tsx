@@ -89,11 +89,7 @@ const Services = () => {
                         className="group flex items-center gap-4 p-4 md:p-5 rounded-2xl border border-border/60 bg-card/80 backdrop-blur-sm hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-18px_hsl(220_85%_55%/0.45)] transition-all duration-300 h-full"
                       >
                         <span
-                          className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white shrink-0"
-                          style={{
-                            background:
-                              "#8A08FA",
-                          }}
+                          className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white shrink-0 bg-[#8A08FA] group-hover:bg-[#0025CC] transition-colors duration-300"
                         >
                           <SIcon size={18} />
                         </span>

@@ -1,129 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "@/lib/router-compat";
-import {
-  Code2,
-  BrainCircuit,
-  Rocket,
-  Globe2,
-  Smartphone,
-  ShoppingCart,
-  PenTool,
-  Search,
-  Check,
-  ArrowRight,
-  type LucideIcon,
-} from "lucide-react";
-
-type Service = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  benefits: string[];
-};
-
-const services: Service[] = [
-  {
-    icon: Code2,
-    title: "Custom Software Development",
-    description:
-      "Build tailored software solutions that align with your business processes, workflows, and long-term goals.",
-    benefits: [
-      "Fully customized to your business requirements",
-      "Scalable architecture for long-term growth",
-      "Seamless integration with existing systems",
-      "Ongoing support and continuous improvement",
-    ],
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI Platform Development",
-    description:
-      "We build AI-powered platforms, automation tools, chatbots, and intelligent systems that help businesses work smarter.",
-    benefits: [
-      "AI workflows and automation",
-      "LLM, chatbot, and RAG-based solutions",
-      "Smart dashboards and analytics",
-      "Secure integration with existing systems",
-    ],
-  },
-  {
-    icon: Rocket,
-    title: "SaaS Product Development",
-    description:
-      "We help founders and businesses build SaaS products with user roles, dashboards, authentication, APIs, and scalable infrastructure.",
-    benefits: [
-      "MVP to production-ready SaaS",
-      "Multi-tenant architecture",
-      "Dashboard and subscription-ready flows",
-      "Scalable backend and database structure",
-    ],
-  },
-  {
-    icon: Globe2,
-    title: "Web App Development",
-    description:
-      "We build fast, responsive, and SEO-friendly web applications using modern frontend and backend technologies.",
-    benefits: [
-      "Modern responsive web apps",
-      "Secure backend and API integration",
-      "Performance-focused development",
-      "SEO-friendly structure",
-    ],
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description:
-      "We create mobile-friendly and cross-platform digital experiences with smooth user flows and reliable performance.",
-    benefits: [
-      "Mobile-first user experience",
-      "Clean app architecture",
-      "API-connected features",
-      "Scalable user journeys",
-    ],
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Development",
-    description:
-      "We build e-commerce platforms with product management, cart, checkout, order flow, admin panels, and SEO-ready pages.",
-    benefits: [
-      "Product and order management",
-      "Secure checkout-ready structure",
-      "Admin and customer flows",
-      "SEO-friendly store pages",
-    ],
-  },
-  {
-    icon: PenTool,
-    title: "UI/UX Design",
-    description:
-      "We design clean, modern, and conversion-focused interfaces that make digital products easier to use and more professional.",
-    benefits: [
-      "User-friendly layouts",
-      "Clean design systems",
-      "Conversion-focused screens",
-      "Responsive design",
-    ],
-  },
-  {
-    icon: Search,
-    title: "SEO & Digital Growth",
-    description:
-      "We optimize websites for search visibility, technical performance, content structure, and organic business growth.",
-    benefits: [
-      "Technical SEO audits",
-      "On-page optimization",
-      "Content structure improvement",
-      "Growth-focused SEO strategy",
-    ],
-  },
-];
+import { Check, ArrowRight } from "lucide-react";
+import { SERVICE_DETAILS } from "@/components/services/serviceDetails";
 
 const ServicesOverview = () => {
   const [active, setActive] = useState(0);
-  const current = services[active];
+  const current = SERVICE_DETAILS[active];
   const ActiveIcon = current.icon;
 
   return (
@@ -140,7 +23,8 @@ const ServicesOverview = () => {
             Services We Offer
           </h2>
           <p className="text-sm md:text-base text-silver max-w-2xl mx-auto leading-relaxed">
-            We build secure, scalable, and growth-ready software solutions including custom web apps, AI platforms, SaaS products, mobile apps, and e-commerce systems.
+            AI platforms, chatbots, machine learning, custom software, web and
+            mobile apps, and product design — engineered for scale.
           </p>
         </motion.div>
 
@@ -149,30 +33,32 @@ const ServicesOverview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl border border-border/60 bg-card/80 backdrop-blur-sm shadow-[0_20px_60px_-30px_rgba(0,0,0,0.45)] overflow-hidden"
+          className="rounded-2xl border border-white/10 bg-card/80 backdrop-blur-sm shadow-[0_24px_70px_-34px_rgba(138,8,250,0.45)] overflow-hidden"
         >
-          <div className="grid grid-cols-1 md:grid-cols-[300px_1fr]">
+          <div className="grid grid-cols-1 md:grid-cols-[320px_1fr]">
             {/* Tabs */}
-            <div className="p-3 md:p-4 md:border-r border-b md:border-b-0 border-border/60 bg-background/40">
+            <div className="p-3 md:p-4 md:border-r border-b md:border-b-0 border-white/10 bg-background/40">
               <ul className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible">
-                {services.map((s, i) => {
+                {SERVICE_DETAILS.map((s, i) => {
                   const Icon = s.icon;
                   const isActive = i === active;
                   return (
-                    <li key={s.title} className="shrink-0 md:shrink">
+                    <li key={s.slug} className="shrink-0 md:shrink">
                       <button
                         type="button"
                         onClick={() => setActive(i)}
                         aria-pressed={isActive}
                         className={[
-                          "w-full text-left flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all duration-300",
+                          "group w-full text-left flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all duration-300",
                           isActive
-                            ? "bg-gradient-to-r from-[hsl(220_85%_55%)] to-[hsl(270_75%_60%)] text-white shadow-[0_8px_24px_-12px_hsl(220_85%_55%/0.7)]"
-                            : "text-foreground/75 hover:text-foreground hover:bg-foreground/5",
+                            ? "bg-[#8A08FA] text-white shadow-[0_10px_28px_-14px_rgba(138,8,250,0.75)]"
+                            : "text-foreground/75 hover:text-white hover:bg-[#0025CC]",
                         ].join(" ")}
                       >
                         <Icon size={16} className="shrink-0" />
-                        <span className="whitespace-nowrap md:whitespace-normal">{s.title}</span>
+                        <span className="whitespace-nowrap md:whitespace-normal">
+                          {s.name}
+                        </span>
                       </button>
                     </li>
                   );
@@ -182,39 +68,52 @@ const ServicesOverview = () => {
 
             {/* Detail */}
             <motion.div
-              key={current.title}
+              key={current.slug}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
               className="p-6 md:p-10"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(220_85%_55%)] to-[hsl(270_75%_60%)] text-white">
-                  <ActiveIcon size={18} />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white bg-[#8A08FA] shadow-[0_12px_30px_-14px_rgba(138,8,250,0.8)]">
+                  <ActiveIcon size={20} />
                 </span>
                 <h3 className="text-xl md:text-2xl font-semibold tracking-[-0.01em] text-foreground">
-                  {current.title}
+                  {current.name}
                 </h3>
               </div>
               <p className="text-sm md:text-base text-silver leading-relaxed mb-6 max-w-2xl">
-                {current.description}
+                {current.heroSubtitle}
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                {current.benefits.map((b) => (
-                  <li key={b} className="flex items-start gap-2.5 text-sm text-foreground/85">
-                    <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(220_85%_55%/0.12)] text-[hsl(220_85%_55%)]">
+                {current.overviewBenefits.slice(0, 4).map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-start gap-2.5 text-sm text-foreground/85"
+                  >
+                    <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[rgba(0,37,204,0.22)] text-[#B583FF]">
                       <Check size={12} strokeWidth={3} />
                     </span>
                     <span>{b}</span>
                   </li>
                 ))}
               </ul>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {current.techBadges.slice(0, 5).map((t) => (
+                  <span
+                    key={t}
+                    className="px-3 py-1.5 rounded-full text-[11px] font-medium text-white/85 border border-white/12 bg-white/[0.04]"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
               <Link
-                to="/services"
-                aria-label={`Explore ${current.title} service details`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-[hsl(220_85%_55%)] to-[hsl(270_75%_60%)] shadow-[0_10px_30px_-12px_hsl(220_85%_55%/0.7)] hover:opacity-95 transition"
+                to={`/services/${current.slug}`}
+                aria-label={`Explore ${current.name}`}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-[#8A08FA] hover:bg-[#0025CC] shadow-[0_14px_34px_-16px_rgba(138,8,250,0.8)] transition-colors duration-300"
               >
-                Explore {current.title}
+                Explore {current.name}
                 <ArrowRight size={14} />
               </Link>
             </motion.div>

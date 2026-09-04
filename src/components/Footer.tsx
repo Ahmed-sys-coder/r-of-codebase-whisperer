@@ -20,27 +20,13 @@ const company = [
 ];
 
 const blogCats = [
-  {
-    label: "What Is a CRM? A Complete Guide to Customer Relationship Management",
-    href: "/blog/what-is-crm-and-how-it-helps-businesses",
-  },
-  {
-    label: "Custom Software Development: A Complete Guide for Businesses",
-    href: "/blog/custom-software-development-complete-guide",
-  },
-  {
-    label: "AI Automation: How Businesses Can Automate Workflows With Artificial Intelligence",
-    href: "/blog/ai-automation-for-business-workflows",
-  },
-  {
-    label: "SaaS Development: How to Build a Scalable Software-as-a-Service Product",
-    href: "/blog/saas-development-scalable-product-guide",
-  },
-  {
-    label: "UI/UX Design: A Practical Guide to Creating Better Digital Products",
-    href: "/blog/ui-ux-design-practical-guide",
-  },
+  { label: "What is CRM?", href: "/blog/what-is-crm-and-how-it-helps-businesses" },
+  { label: "Custom Software", href: "/blog/custom-software-development-complete-guide" },
+  { label: "AI Automation", href: "/blog/ai-automation-for-business-workflows" },
+  { label: "SaaS Development", href: "/blog/saas-development-scalable-product-guide" },
+  { label: "UI/UX Design", href: "/blog/ui-ux-design-practical-guide" },
 ];
+
 
 
 const Footer = () => {

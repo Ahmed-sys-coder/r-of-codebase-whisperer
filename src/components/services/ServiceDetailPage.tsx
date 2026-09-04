@@ -10,7 +10,8 @@ import FAQSection, { buildFAQSchema } from "@/components/FAQSection";
 import PremiumIconBadge from "@/components/ui/PremiumIconBadge";
 import { TechChip } from "@/components/icons/techIcons";
 import { getServiceWhatsAppUrl } from "@/lib/whatsapp";
-import { SERVICE_HERO_IMAGES, SERVICE_OVERVIEW_CONTENT, type ServiceDetail } from "./serviceDetails";
+import { SERVICE_HERO_IMAGES, SERVICE_OVERVIEW_CONTENT, SERVICE_BLOG_SLUGS, type ServiceDetail } from "./serviceDetails";
+import { blogPosts } from "@/data/blogData";
 
 
 interface Props {
@@ -51,6 +52,10 @@ const SectionHeading = ({
 const ServiceDetailPage = ({ service }: Props) => {
   const Icon = service.icon;
   const cta = getServiceWhatsAppUrl(service.name);
+  const serviceBlogs = (SERVICE_BLOG_SLUGS[service.slug] ?? [])
+    .map((slug) => blogPosts.find((p) => p.id === slug))
+    .filter((p): p is (typeof blogPosts)[number] => !!p)
+    .slice(0, 3);
 
   const schema = {
     "@context": "https://schema.org",
@@ -85,17 +90,11 @@ const ServiceDetailPage = ({ service }: Props) => {
             />
             <div
               className="absolute inset-0"
-              style={{
-                background:
-                  "#8A08FA",
-              }}
+              style={{ background: "rgba(0,0,0,0.68)" }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "#8A08FA, #8A08FA",
-              }}
+              style={{ background: "rgba(138,8,250,0.18)" }}
             />
             <div className="relative z-10 w-full max-w-5xl mx-auto text-center">
               <motion.h1
@@ -153,11 +152,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                           {overview.miniCards.map((m) => (
                             <div
                               key={m.title}
-                              className="flex items-start gap-3 rounded-xl p-3.5 border border-[hsl(258_90%_66%/0.18)]"
-                              style={{
-                                background:
-                                  "#8A08FA",
-                              }}
+                              className="flex items-start gap-3 rounded-xl p-3.5 border border-[#8A08FA]/25 bg-[#15151F]"
                             >
                               <span
                                 className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white shrink-0"
@@ -205,11 +200,8 @@ const ServiceDetailPage = ({ service }: Props) => {
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div
-                    className="absolute inset-0"
-                    style={{
-                      background:
-                        "#8A08FA",
-                    }}
+                    className="absolute inset-0 pointer-events-none"
+                    style={{ background: "rgba(0,0,0,0.28)" }}
                   />
                 </div>
               </div>
@@ -257,10 +249,7 @@ const ServiceDetailPage = ({ service }: Props) => {
               >
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "#8A08FA, #8A08FA",
-                  }}
+                  style={{ background: "transparent" }}
                 />
                 <div className="relative">
 
@@ -373,37 +362,42 @@ const ServiceDetailPage = ({ service }: Props) => {
           <Section>
             <SectionHeading title={service.blogsHeading} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {service.relatedBlogs.map((b, i) => (
+              {serviceBlogs.map((b, i) => (
                 <motion.article
-                  key={b.title}
+                  key={b.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.45, delay: i * 0.05 }}
-                  className="rounded-2xl overflow-hidden border border-border/60 bg-card/70 backdrop-blur-sm hover:-translate-y-1 transition-transform duration-300"
+                  className="rounded-2xl overflow-hidden border border-white/12 bg-[#0F0F16] hover:-translate-y-1 hover:border-[#8A08FA]/50 transition-all duration-300"
                 >
-                  <div className="relative h-44 overflow-hidden">
-                    <img
-                      src={b.image}
-                      alt={b.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h4 className="text-base font-semibold text-foreground mb-2 line-clamp-2">
-                      {b.title}
-                    </h4>
-                    <p className="text-sm text-silver leading-relaxed mb-4 line-clamp-3">
-                      {b.excerpt}
-                    </p>
-                    <Link
-                      to="/blog"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[hsl(258_90%_66%)] hover:gap-2 transition-all"
-                    >
-                      Read More <ArrowRight size={12} />
-                    </Link>
-                  </div>
+                  <Link to="/blog/$slug" params={{ slug: b.id }} className="block">
+                    <div className="relative h-44 overflow-hidden">
+                      <img
+                        src={b.coverImage}
+                        alt={b.imageAlt ?? b.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <span className="inline-block mb-3 text-[10px] uppercase tracking-[0.18em] font-semibold text-white px-2.5 py-1 rounded-full bg-[#8A08FA]">
+                        {b.category}
+                      </span>
+                      <h4 className="text-base font-semibold text-white mb-2 line-clamp-2">
+                        {b.title}
+                      </h4>
+                      <p className="text-sm text-neutral-300 leading-relaxed mb-3 line-clamp-3">
+                        {b.excerpt}
+                      </p>
+                      <p className="text-[11px] text-neutral-400 mb-4">
+                        {b.date} · {b.readTime}
+                      </p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B583FF]">
+                        Read More <ArrowRight size={12} />
+                      </span>
+                    </div>
+                  </Link>
                 </motion.article>
               ))}
             </div>
@@ -438,7 +432,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                   href={cta}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#8A08FA] shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-transform"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-[#8A08FA] bg-white border border-white/70 shadow-[0_16px_34px_-16px_rgba(0,0,0,0.55)] hover:bg-[#0025CC] hover:text-white hover:border-[#0025CC] hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Start Your Project
                   <ArrowRight size={16} />

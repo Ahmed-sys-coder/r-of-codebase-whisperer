@@ -581,10 +581,18 @@
 }
 .card-3d > * { position: relative; z-index: 1; }
 .card-3d:hover {
-  transform: translateY(-8px) scale(1.04) rotateX(2deg) rotateY(-2deg);
-  border-color: #8A08FA;
-  box-shadow: 0 0 0 1px #8A08FA;
+  transform: translateY(-4px);
+  border-color: rgba(138, 8, 250, 0.65);
+  box-shadow: 0 18px 44px -26px rgba(138, 8, 250, 0.55);
 }
+/* Keep technology chips/icons untouched by the card hover treatment */
+.card-3d:hover .tech-chip {
+  background: #17171F;
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #EDEDF2;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card-3d:hover { transform: none; }
 }

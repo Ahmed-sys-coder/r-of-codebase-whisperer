@@ -31,7 +31,7 @@ const groups = [
 ];
 
 const Card = ({ g }: { g: (typeof groups)[number] }) => (
-  <div className="premium-card card-3d card-gradient-hover p-7 md:p-9 flex flex-col min-h-[300px] md:min-h-[340px] h-full overflow-hidden">
+  <div className="premium-card card-3d p-7 md:p-9 flex flex-col min-h-[300px] md:min-h-[340px] h-full overflow-hidden">
     <p className="text-[10px] uppercase tracking-[0.25em] text-dim font-semibold mb-6">
       {g.label}
     </p>

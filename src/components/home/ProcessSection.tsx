@@ -72,7 +72,7 @@ const ProcessSection = () => (
                 />
               )}
               <div className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-6 h-full shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_36px_rgba(15,69,148,0.12)] hover:-translate-y-1 hover:border-[#8A08FA]/20 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8A08FA] to-[#7c3aed] flex items-center justify-center text-white text-sm font-bold shadow-[0_8px_20px_rgba(15,69,148,0.25)] mb-4">
+                <div className="w-12 h-12 rounded-xl bg-[#8A08FA] flex items-center justify-center text-white text-sm font-bold shadow-[0_10px_26px_-12px_rgba(138,8,250,0.7)] mb-4">
                   {s.n}
                 </div>
                 <h3 className="text-base font-semibold text-white mb-2 tracking-[-0.01em]">

@@ -916,3 +916,61 @@ export const SERVICE_NAV = SERVICE_DETAILS.map((s) => ({
   icon: s.icon,
 }));
 
+
+/**
+ * Blog slugs (from src/data/blogData.ts) shown in each service page's
+ * "Related Blogs" section. Single source of truth — the same articles are
+ * listed on the main /blog page and open at /blog/<slug>.
+ */
+export const SERVICE_BLOG_SLUGS: Record<string, string[]> = {
+  "ai-development": [
+    "ai-automation-for-business-workflows",
+    "machine-learning-explained",
+    "ai-chatbot-development-guide",
+  ],
+  "ai-chatbot-development": [
+    "ai-chatbot-development-guide",
+    "what-is-natural-language-processing",
+    "ai-automation-for-business-workflows",
+  ],
+  "predictive-models": [
+    "machine-learning-explained",
+    "ai-automation-for-business-workflows",
+    "what-is-erp-software-complete-guide",
+  ],
+  "mobile-app-development": [
+    "mvp-development-guide",
+    "ui-ux-design-practical-guide",
+    "custom-software-development-complete-guide",
+  ],
+  "custom-software-development": [
+    "custom-software-development-complete-guide",
+    "what-is-erp-software-complete-guide",
+    "what-is-crm-and-how-it-helps-businesses",
+  ],
+  "natural-language-processing": [
+    "what-is-natural-language-processing",
+    "ai-chatbot-development-guide",
+    "machine-learning-explained",
+  ],
+  "machine-learning": [
+    "machine-learning-explained",
+    "computer-vision-explained",
+    "ai-automation-for-business-workflows",
+  ],
+  "computer-vision": [
+    "computer-vision-explained",
+    "machine-learning-explained",
+    "ai-automation-for-business-workflows",
+  ],
+  "custom-web-development": [
+    "saas-development-scalable-product-guide",
+    "custom-software-development-complete-guide",
+    "mvp-development-guide",
+  ],
+  "ui-ux-design": [
+    "ui-ux-design-practical-guide",
+    "mvp-development-guide",
+    "saas-development-scalable-product-guide",
+  ],
+};

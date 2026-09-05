@@ -25,6 +25,7 @@ import {
   Brain,
   Video,
 } from "lucide-react";
+import { Store, Sofa, Ticket, HardHat, Boxes } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface CaseStudy {
@@ -47,6 +48,230 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
+  {
+    id: "hafiz",
+    title: "HAFIZ Business Management Platform",
+    subtitle: "Unified POS, ERP & CRM for Retail Operations",
+    region: "Pakistan",
+    category: "POS / ERP / CRM",
+    icon: Store,
+    accent: "from-[hsl(272_94%_51%/0.08)] to-transparent",
+    overview:
+      "A unified POS, ERP, and CRM system built to help retail businesses manage sales, inventory, and customer relationships from a single dashboard.",
+    clientBackground:
+      "A retail and wholesale business (HAFIZ) that needed one system to replace multiple disconnected tools for sales, inventory tracking, and customer management.",
+    problems: [
+      "Sales, stock, and customer data managed across separate disconnected tools",
+      "No real-time visibility into inventory and daily transactions",
+      "Supplier and logistics tracking done manually, causing delays",
+      "Lack of centralized reporting for business decision-making",
+    ],
+    approach: [
+      "Built a unified dashboard combining POS, ERP-style stock control, CRM, and logistics in one system",
+      "Designed a Daily Diary module for real-time transaction logging",
+      "Integrated supplier management for streamlined procurement",
+      "Built centralized data and reporting for actionable business analytics",
+    ],
+    features: [
+      "Point-of-Sale (POS) system for fast checkout",
+      "Real-time stock and inventory management",
+      "Daily Diary for transaction logging",
+      "CRM for customer relationship tracking",
+      "Supplier management module",
+      "Logistics and delivery tracking",
+      "Centralized data and reports dashboard",
+      "Role-based admin settings and access control",
+    ],
+    techStack: ["React", "Node.js", "Express", "MySQL", "REST APIs"],
+    results: [
+      "Centralized 5+ business functions (sales, stock, CRM, suppliers, logistics) into one platform",
+      "Eliminated the need for multiple disconnected tools",
+      "Enabled real-time tracking of daily sales and inventory",
+      "Delivered a scalable, production-ready business management system",
+    ],
+    whyItMatters:
+      "Shows how a single well-structured platform can replace a stack of disconnected retail tools.",
+  },
+  {
+    id: "inspire-interiors",
+    title: "Interior Design Management Platform",
+    subtitle: "Project, Client & Site Operations for Design Studios",
+    region: "In-house Product",
+    category: "Enterprise Software",
+    icon: Sofa,
+    accent: "from-[hsl(272_94%_51%/0.08)] to-transparent",
+    overview:
+      "A project and client management system built for interior design studios to track projects, client relations, quotations, and site activity in real time.",
+    clientBackground:
+      "An in-house platform built for The Inspire Interiors, an interior design studio, to replace scattered spreadsheets and manual tracking with a centralized studio management system.",
+    problems: [
+      "Project progress, client inquiries, and quotations tracked across disconnected tools",
+      "No real-time visibility into site visits, contractor updates, or field reports",
+      "Manual follow-ups on pending inquiries and open quotations, causing delays",
+      "No centralized view of financials, contractors, and inventory across projects",
+    ],
+    approach: [
+      "Built a real-time dashboard summarizing active projects, inquiries, and quotations",
+      "Designed a Project Spotlight module showing live progress on top engagements",
+      "Integrated a live activity feed for site visits, blockers, and approvals",
+      "Added a field reports module to log daily site visit notes from the team",
+      "Built dedicated modules for client relations, quotations and BOQs, financials, contractors, and inventory",
+    ],
+    features: [
+      "Real-time studio dashboard for projects, inquiries, and quotations",
+      "Project Spotlight with live progress tracking",
+      "Live activity feed for team updates",
+      "Today's field reports with site visit logs",
+      "Client relations and inquiry management",
+      "Quotations and BOQ tracking with pipeline value",
+      "Financials module",
+      "Contractors and stock/inventory management",
+    ],
+    techStack: ["React", "TypeScript", "Node.js", "PostgreSQL", "REST APIs"],
+    results: [
+      "Centralized tracking of 12+ active projects and a multi-crore quotation pipeline",
+      "Real-time visibility into site visits, blockers, and team activity",
+      "Reduced manual follow-up effort on pending client inquiries",
+      "Delivered a complete studio operations platform — from client inquiry to project delivery",
+    ],
+    whyItMatters:
+      "Design studios run on coordination; this platform turns scattered updates into one operational view.",
+  },
+  {
+    id: "playland-sindbad",
+    title: "Playland Ticket & Operations System",
+    subtitle: "Ticketing, Revenue & Ride Operations Management",
+    region: "Pakistan",
+    category: "Enterprise Software",
+    icon: Ticket,
+    accent: "from-[hsl(272_94%_51%/0.08)] to-transparent",
+    overview:
+      "A ticketing and operations management platform built to help amusement parks track revenue, ticket sales, and ride operations in real time.",
+    clientBackground:
+      "An in-house platform built for Sindbad Daska, an amusement park, to replace manual tracking of ticket sales, tokens, and ride maintenance with a unified digital system.",
+    problems: [
+      "Revenue, visitor count, and ticket sales tracked manually with no real-time visibility",
+      "No centralized system to monitor ride and attraction maintenance status",
+      "Daily reporting required compiling data from multiple disconnected sources",
+      "Expense versus revenue comparison done manually, delaying financial decisions",
+    ],
+    approach: [
+      "Built a real-time analytics dashboard for revenue, visitors, and ticket sales",
+      "Designed a Quick Sale module for fast ticket and token transactions",
+      "Integrated revenue versus expense tracking with weekly performance charts",
+      "Added maintenance alerts for rides and attractions",
+      "Built a customizable daily report generator with selectable modules",
+    ],
+    features: [
+      "Real-time revenue and visitor analytics dashboard",
+      "Quick Sale module for fast transactions",
+      "Ticket sales tracking and management",
+      "Token issuance and usage tracking",
+      "Expense tracking with net profit/loss view",
+      "Revenue versus expense trend charts",
+      "Ride and attraction maintenance alerts",
+      "Customizable daily report generator",
+    ],
+    techStack: ["React", "Node.js", "MongoDB", "Chart.js", "REST APIs"],
+    results: [
+      "Enabled real-time tracking of revenue, visitors, and ticket sales in one view",
+      "Automated daily reporting, reducing manual compilation effort",
+      "Improved maintenance visibility for rides and attractions",
+      "Delivered a complete park management system from ticketing to financial reporting",
+    ],
+    whyItMatters:
+      "Operational clarity for a cash-heavy, high-footfall business without adding hardware complexity.",
+  },
+  {
+    id: "sialkot-construction",
+    title: "Construction Management Software",
+    subtitle: "Budgets, Procurement & Site Progress Across Projects",
+    region: "Pakistan",
+    category: "Enterprise Software",
+    icon: HardHat,
+    accent: "from-[hsl(272_94%_51%/0.08)] to-transparent",
+    overview:
+      "A construction and real estate portal built to help builders and developers track project budgets, procurement, and site progress across multiple sites in real time.",
+    clientBackground:
+      "An in-house construction management portal built for Sialkot Real Estate to replace manual ledgers and scattered spreadsheets with a centralized system for plots, expenses, procurement, and site activity.",
+    problems: [
+      "Project budgets and procurement spend tracked manually across sites with no consolidated view",
+      "No real-time visibility into construction phase progress from foundation to handover",
+      "Material rate fluctuations and supplier deliveries not tracked centrally",
+      "Labour attendance and site activity logged separately, delaying reporting",
+      "Client quotation preparation was manual and time-consuming",
+    ],
+    approach: [
+      "Built a real-time dashboard summarizing active projects, portfolio budget, and spend across sites",
+      "Designed a monthly procurement spend chart to track material costs over time",
+      "Integrated a projects-by-phase breakdown for live construction-stage distribution",
+      "Built an activity and alerts feed for deliveries, labour attendance, and price changes",
+      "Added dedicated modules for project ledgers, office expenses, and smart quotations",
+    ],
+    features: [
+      "Real-time portfolio dashboard for budget, spend, and active projects",
+      "Monthly procurement spend analytics",
+      "Projects by phase tracking (foundation to handover)",
+      "Recent activity and alerts for deliveries, labour, and price changes",
+      "Project ledgers for per-plot financial tracking",
+      "Office expense management",
+      "Smart quotations module",
+      "Multi-site live status monitoring",
+    ],
+    techStack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Chart.js"],
+    results: [
+      "Consolidated a PKR 30M+ portfolio budget with average budget-utilization visibility",
+      "Real-time tracking of procurement spend across a six-month trend view",
+      "Centralized activity log for deliveries, labour attendance, and material rate alerts",
+      "Delivered a complete construction management system — from plot ledger to client quotation",
+    ],
+    whyItMatters:
+      "Construction margins live and die on procurement and phase tracking; this makes both visible daily.",
+  },
+  {
+    id: "custom-erp",
+    title: "Custom ERP System",
+    subtitle: "Centralized Workflows, Data & Operational Reporting",
+    region: "Enterprise",
+    category: "Enterprise Software / ERP",
+    icon: Boxes,
+    accent: "from-[hsl(272_94%_51%/0.08)] to-transparent",
+    overview:
+      "A custom ERP solution developed to streamline business operations, centralize workflows, manage business data, and improve operational efficiency.",
+    clientBackground:
+      "A growing business running finance, inventory, procurement, and HR processes across separate tools, with no single source of truth for operational data.",
+    problems: [
+      "Core business processes spread across spreadsheets and standalone tools",
+      "Duplicate data entry between departments and frequent reconciliation errors",
+      "No consolidated reporting for management decisions",
+      "Limited access control over sensitive business data",
+    ],
+    approach: [
+      "Mapped existing workflows and modelled them into a single ERP data structure",
+      "Built modular functionality so departments could adopt the system in stages",
+      "Automated recurring workflows and approvals to remove manual handoffs",
+      "Added consolidated dashboards and exportable operational reports",
+    ],
+    features: [
+      "Centralized business data with a single source of truth",
+      "Inventory and procurement management",
+      "Finance and expense tracking",
+      "Order and workflow automation with approvals",
+      "Role-based access control",
+      "Operational dashboards and exportable reports",
+      "Audit trail across key records",
+      "Modular architecture for phased rollout",
+    ],
+    techStack: ["React", "TypeScript", "Node.js", "PostgreSQL", "REST APIs"],
+    results: [
+      "Replaced multiple disconnected tools with one centralized ERP",
+      "Reduced duplicate data entry between departments",
+      "Gave management consolidated, up-to-date operational reporting",
+      "Delivered a scalable foundation for future modules",
+    ],
+    whyItMatters:
+      "An ERP built around the actual workflow removes the reconciliation tax of running a business on spreadsheets.",
+  },
   {
     id: "wukalagpt",
     title: "Legal AI Research Platform",

@@ -34,7 +34,7 @@ const Portfolio = () => {
           <CaseStudyHero />
           
           <section className="relative z-10 px-6">
-            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+            <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
               {caseStudies.map((study, i) => (
                 <CaseStudyCard key={study.id} study={study} index={i} />
               ))}

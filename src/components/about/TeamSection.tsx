@@ -17,11 +17,11 @@ interface TeamMember {
 
 const team: TeamMember[] = [
   {
-    name: "Ahmed Sarfraz",
+    name: "Ahmed Tatla",
     role: "Founder & CEO",
     bio: "Visionary leader driving Code Envision Technologies' mission to deliver world-class software, AI platforms, and digital solutions from Pakistan to the globe.",
     image: ahmedImg,
-    alt: "Ahmed Sarfraz - Founder and CEO of Code Envision Technologies",
+    alt: "Ahmed Tatla - Founder and CEO of Code Envision Technologies",
     socials: [
       {
         icon: Linkedin,

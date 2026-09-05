@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   AlertTriangle,
   Compass,
@@ -6,12 +6,18 @@ import {
   BarChart3,
   Sparkles,
   Users,
-  ChevronDown,
   ExternalLink,
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
-import { useId, useState } from "react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import type { CaseStudy } from "./caseStudiesData";
 
 interface Props {
@@ -71,6 +77,11 @@ const DESCRIPTION_OVERRIDES: Record<string, string> = {
 };
 
 const IMAGE_OVERRIDES: Record<string, string> = {
+  hafiz: UNSPLASH("1556742049-0cfed4f6a45d"),
+  "inspire-interiors": UNSPLASH("1586023492125-27b2c045efd7"),
+  "playland-sindbad": UNSPLASH("1513889961551-628c1e5e2ee9"),
+  "sialkot-construction": UNSPLASH("1541888946425-d81bb19240f5"),
+  "custom-erp": UNSPLASH("1554224155-6726b3ff858f"),
   wukalagpt: UNSPLASH("1589829545856-d10d557cf95f"),
   "goldman-trading": UNSPLASH("1611974789855-9c2a0a7236a3"),
   "roommatch-pk": UNSPLASH("1560518883-ce09059eeffa"),
@@ -101,14 +112,39 @@ const IMAGE_OVERRIDES: Record<string, string> = {
 };
 
 const TechPill = ({ name }: { name: string }) => (
-  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/15 text-white border border-[#8A08FA]/15">
+  <span className="text-[10px] md:text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#8A08FA]/15 text-white border border-[#8A08FA]/30">
     {name}
   </span>
 );
 
+const BlockLabel = ({
+  icon: Icon,
+  children,
+}: {
+  icon: typeof Users;
+  children: React.ReactNode;
+}) => (
+  <div className="flex items-center gap-2 mb-2">
+    <Icon size={13} className="text-[#B583FF]" />
+    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
+      {children}
+    </span>
+  </div>
+);
+
+const Bullets = ({ items }: { items: string[] }) => (
+  <ul className="space-y-1.5">
+    {items.map((t) => (
+      <li key={t} className="flex items-start gap-2.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#8A08FA] mt-1.5 shrink-0" />
+        <span className="text-xs md:text-sm text-neutral-200 leading-relaxed">{t}</span>
+      </li>
+    ))}
+  </ul>
+);
+
 const CaseStudyCard = ({ study, index }: Props) => {
-  const [expanded, setExpanded] = useState(false);
-  const panelId = useId();
+  const [open, setOpen] = useState(false);
 
   const displayTitle = TITLE_OVERRIDES[study.id] ?? study.title;
   const displayDescription = DESCRIPTION_OVERRIDES[study.id] ?? study.overview;
@@ -116,193 +152,160 @@ const CaseStudyCard = ({ study, index }: Props) => {
   const headlineResult = study.results?.[0];
 
   return (
-    <motion.article
-      id={study.id}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: index * 0.05 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#0A0A0A] border border-white/10 shadow-[0_8px_30px_rgba(15,23,42,0.06)] hover:shadow-[0_18px_50px_rgba(15,69,148,0.15)] hover:-translate-y-1 hover:border-[#8A08FA]/25 transition-all duration-300"
-    >
-      <div className="relative h-[220px] md:h-[240px] overflow-hidden">
-        <img
-          src={image}
-          alt={`${displayTitle} — ${study.category} project preview`}
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#8A08FA]/55 via-[#1e3a8a]/35 to-[#7c3aed]/55 mix-blend-multiply" />
-        <div className="absolute top-4 left-4">
-          <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30">
-            {study.category}
-          </span>
-        </div>
-      </div>
-
-      <div className="p-5 md:p-6 flex flex-col flex-1">
-        <h2 className="text-lg md:text-xl font-bold text-white tracking-[-0.01em] mb-2">
-          {displayTitle}
-        </h2>
-        <p className="text-[13px] text-neutral-300 leading-[1.55] mb-4">
-          {displayDescription}
-        </p>
-
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {study.techStack.slice(0, 6).map((t) => (
-            <TechPill key={t} name={t} />
-          ))}
-        </div>
-
-        {headlineResult && (
-          <div className="flex items-start gap-2 mb-4 p-2.5 rounded-lg bg-gradient-to-r from-[#8A08FA]/5 to-[#7c3aed]/5 border border-[#8A08FA]/10">
-            <TrendingUp size={15} className="text-white shrink-0 mt-0.5" />
-            <p className="text-xs md:text-[13px] font-medium text-white leading-snug">
-              {headlineResult}
-            </p>
+    <>
+      <motion.article
+        id={study.id}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5, delay: index * 0.04 }}
+        className="group relative h-full flex flex-col overflow-hidden rounded-2xl bg-[#0F0F16] border border-white/12 shadow-[0_10px_36px_-20px_rgba(0,0,0,0.8)] hover:border-[#8A08FA]/55 hover:shadow-[0_22px_50px_-26px_rgba(138,8,250,0.5)] transition-colors duration-300"
+      >
+        <div className="relative h-[200px] shrink-0 overflow-hidden">
+          <img
+            src={image}
+            alt={`${displayTitle} — ${study.category} project preview`}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute top-4 left-4">
+            <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white px-3 py-1.5 rounded-full bg-[#8A08FA]">
+              {study.category}
+            </span>
           </div>
-        )}
-
-        <AnimatePresence initial={false}>
-          {expanded && (
-            <motion.div
-              id={panelId}
-              key="panel"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{
-                height: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-                opacity: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
-              }}
-              className="overflow-hidden"
-            >
-              <div className="pt-1 space-y-5">
-                <div className="p-4 rounded-xl bg-neutral-900 border border-white/10/70">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <Users size={13} className="text-neutral-400" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
-                      Client Background
-                    </span>
-                  </div>
-                  <p className="text-xs md:text-sm text-neutral-200 leading-relaxed">
-                    {study.clientBackground}
-                  </p>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <AlertTriangle size={13} className="text-rose-500" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
-                      The Problem
-                    </span>
-                  </div>
-                  <ul className="space-y-1.5">
-                    {study.problems.map((p) => (
-                      <li key={p} className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-1.5 shrink-0" />
-                        <span className="text-xs md:text-sm text-neutral-200 leading-relaxed">
-                          {p}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Compass size={13} className="text-[#8A08FA]" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
-                      Our Approach
-                    </span>
-                  </div>
-                  <ul className="space-y-1.5">
-                    {study.approach.map((a) => (
-                      <li key={a} className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#7c3aed] mt-1.5 shrink-0" />
-                        <span className="text-xs md:text-sm text-neutral-200 leading-relaxed">
-                          {a}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Layers size={13} className="text-white" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
-                      Key Features
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {study.features.map((f) => (
-                      <div
-                        key={f}
-                        className="flex items-start gap-2 p-2.5 rounded-lg bg-neutral-900 border border-white/10/70"
-                      >
-                        <Sparkles size={12} className="text-white mt-0.5 shrink-0" />
-                        <span className="text-xs text-neutral-200 leading-relaxed">
-                          {f}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <BarChart3 size={13} className="text-emerald-600" />
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400 font-semibold">
-                      Results
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {study.results.map((r) => (
-                      <div
-                        key={r}
-                        className="flex items-start gap-2 p-2.5 rounded-lg bg-emerald-50/60 border border-emerald-200/60"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
-                        <span className="text-xs text-neutral-200 leading-relaxed">
-                          {r}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <div className="mt-auto pt-4 flex flex-wrap items-center gap-3">
-          <button
-            onClick={() => setExpanded(!expanded)}
-            aria-expanded={expanded}
-            aria-controls={panelId}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-[#8A08FA] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A08FA]/40 rounded"
-          >
-            {expanded ? "Hide Case Study" : "View Case Study"}
-            {expanded ? (
-              <ChevronDown size={14} className="rotate-180 transition-transform" />
-            ) : (
-              <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-            )}
-          </button>
-          {study.liveUrl && (
-            <a
-              href={study.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-auto inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-300 hover:text-white transition-colors"
-            >
-              Visit Site
-              <ExternalLink size={12} />
-            </a>
-          )}
         </div>
-      </div>
-    </motion.article>
+
+        <div className="p-6 flex flex-col flex-1">
+          <h2 className="text-lg md:text-xl font-bold text-white tracking-[-0.01em] mb-2">
+            {displayTitle}
+          </h2>
+          <p className="text-[13px] text-neutral-300 leading-[1.6] mb-4 line-clamp-3">
+            {displayDescription}
+          </p>
+
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {study.techStack.slice(0, 5).map((t) => (
+              <TechPill key={t} name={t} />
+            ))}
+          </div>
+
+          {headlineResult && (
+            <div className="flex items-start gap-2 mb-5 p-3 rounded-xl bg-[#17171F] border border-[#8A08FA]/20">
+              <TrendingUp size={15} className="text-[#B583FF] shrink-0 mt-0.5" />
+              <p className="text-xs md:text-[13px] font-medium text-neutral-100 leading-snug line-clamp-2">
+                {headlineResult}
+              </p>
+            </div>
+          )}
+
+          <div className="mt-auto flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#8A08FA] hover:bg-[#0025CC] transition-colors duration-300"
+            >
+              View Case Study
+              <ArrowRight size={13} />
+            </button>
+            {study.liveUrl && (
+              <a
+                href={study.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-auto inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-300 hover:text-white transition-colors"
+              >
+                Visit Site
+                <ExternalLink size={12} />
+              </a>
+            )}
+          </div>
+        </div>
+      </motion.article>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-[#0F0F16] border border-white/12">
+          <DialogHeader>
+            <span className="inline-flex w-fit text-[10px] uppercase tracking-[0.18em] font-semibold text-white px-3 py-1.5 rounded-full bg-[#8A08FA] mb-2">
+              {study.category}
+            </span>
+            <DialogTitle className="text-xl md:text-2xl font-bold text-white">
+              {displayTitle}
+            </DialogTitle>
+            <DialogDescription className="text-sm text-neutral-300 leading-relaxed">
+              {displayDescription}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-6 pt-2">
+            <div className="flex flex-wrap gap-1.5">
+              {study.techStack.map((t) => (
+                <TechPill key={t} name={t} />
+              ))}
+            </div>
+
+            <div className="p-4 rounded-xl bg-[#17171F] border border-white/10">
+              <BlockLabel icon={Users}>Client Background</BlockLabel>
+              <p className="text-xs md:text-sm text-neutral-200 leading-relaxed">
+                {study.clientBackground}
+              </p>
+            </div>
+
+            <div>
+              <BlockLabel icon={AlertTriangle}>The Problem</BlockLabel>
+              <Bullets items={study.problems} />
+            </div>
+
+            <div>
+              <BlockLabel icon={Compass}>Our Approach</BlockLabel>
+              <Bullets items={study.approach} />
+            </div>
+
+            <div>
+              <BlockLabel icon={Layers}>Key Features</BlockLabel>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {study.features.map((f) => (
+                  <div
+                    key={f}
+                    className="flex items-start gap-2 p-2.5 rounded-lg bg-[#17171F] border border-white/10"
+                  >
+                    <Sparkles size={12} className="text-[#B583FF] mt-0.5 shrink-0" />
+                    <span className="text-xs text-neutral-200 leading-relaxed">{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <BlockLabel icon={BarChart3}>Results</BlockLabel>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {study.results.map((r) => (
+                  <div
+                    key={r}
+                    className="flex items-start gap-2 p-2.5 rounded-lg bg-[#17171F] border border-[#8A08FA]/20"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8A08FA] mt-1.5 shrink-0" />
+                    <span className="text-xs text-neutral-200 leading-relaxed">{r}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {study.liveUrl && (
+              <a
+                href={study.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-[#8A08FA] hover:bg-[#0025CC] transition-colors duration-300"
+              >
+                Visit Live Site
+                <ExternalLink size={14} />
+              </a>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 

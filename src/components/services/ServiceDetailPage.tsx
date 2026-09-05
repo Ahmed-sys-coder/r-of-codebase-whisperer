@@ -239,12 +239,10 @@ const ServiceDetailPage = ({ service }: Props) => {
           <section className="relative z-10 px-6 py-16 md:py-20">
             <div className="w-full max-w-6xl mx-auto">
               <div
-                className="relative rounded-3xl px-6 md:px-12 py-12 md:py-16 border border-white/15 overflow-hidden"
+                className="relative rounded-3xl px-6 md:px-12 py-12 md:py-16 border border-[#8A08FA]/30 overflow-hidden"
                 style={{
-                  background:
-                    "#8A08FA",
-                  boxShadow:
-                    "0 30px 80px -30px hsl(258 80% 40% / 0.55), inset 0 1px 0 hsl(0 0% 100% / 0.12)",
+                  background: "#101018",
+                  boxShadow: "0 30px 80px -40px rgba(138,8,250,0.45)",
                 }}
               >
                 <div
@@ -266,7 +264,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-40px" }}
                       transition={{ duration: 0.45, delay: i * 0.05 }}
-                      className="rounded-2xl p-6 border border-white/10 bg-white/[0.04] backdrop-blur-sm"
+                      className="rounded-2xl p-6 border border-white/12 bg-[#17171F]"
                     >
                       <div className="mb-4">
                         <PremiumIconBadge
@@ -278,7 +276,7 @@ const ServiceDetailPage = ({ service }: Props) => {
                       <h4 className="text-base md:text-lg font-semibold text-white mb-2">
                         {f.title}
                       </h4>
-                      <p className="text-sm text-white/70 leading-relaxed">
+                      <p className="text-sm text-neutral-300 leading-relaxed">
                         {f.desc}
                       </p>
                     </motion.div>

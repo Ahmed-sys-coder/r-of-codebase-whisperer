@@ -67,7 +67,7 @@ const Footer = () => {
                 <Mail size={16} />
               </a>
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/company/code-envision-technologies/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

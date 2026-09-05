@@ -54,10 +54,7 @@ const FounderStory = () => {
                 <div className="relative p-6 md:p-8 rounded-2xl bg-[hsl(0_0%_100%/0.02)] border border-[hsl(0_0%_100%/0.06)]">
                   <div
                     className="absolute inset-0 rounded-2xl pointer-events-none"
-                    style={{
-                      background:
-                        "#8A08FA",
-                    }}
+                    style={{ background: "rgba(138,8,250,0.10)" }}
                   />
                   <div className="relative z-10">
                     <Quote

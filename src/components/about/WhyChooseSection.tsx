@@ -119,17 +119,13 @@ const WhyChooseSection = () => {
               {/* Subtle blue/purple overlay */}
               <div
                 className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: "#8A08FA",
-                }}
+                style={{ background: "rgba(138,8,250,0.10)" }}
               />
             </div>
             {/* Decorative glow */}
             <div
-              className="absolute -inset-4 -z-10 rounded-[2rem] opacity-40 blur-2xl pointer-events-none"
-              style={{
-                background: "#8A08FA",
-              }}
+              className="absolute -inset-4 -z-10 rounded-[2rem] opacity-25 blur-2xl pointer-events-none"
+              style={{ background: "rgba(138,8,250,0.55)" }}
             />
           </motion.div>
 

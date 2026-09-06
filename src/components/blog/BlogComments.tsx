@@ -157,12 +157,11 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
               className="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
             />
             <textarea
-              placeholder={userId ? "Share your thoughts..." : "Please sign in to comment"}
+              placeholder="Share your thoughts..."
               value={content}
               onChange={(e) => setContent(e.target.value)}
               maxLength={1000}
               rows={3}
-              disabled={!userId}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all resize-none disabled:opacity-50"
             />
             <div className="flex items-center justify-between">
@@ -171,13 +170,14 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
               </span>
               <button
                 type="submit"
-                disabled={submitting || !userId}
+                disabled={submitting}
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all disabled:opacity-50"
               >
                 <Send size={14} />
-                Post Comment
+                {submitting ? "Posting..." : "Post Comment"}
               </button>
             </div>
+
           </div>
         </form>
 

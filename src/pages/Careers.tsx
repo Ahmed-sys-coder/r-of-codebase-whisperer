@@ -327,7 +327,7 @@ const Careers = () => {
                     <ArrowUpRight size={15} />
                   </a>
                   <p className="mt-2.5 text-[11px] text-neutral-400 text-center">
-                    Applications go to {APPLY_EMAIL}
+                    Email us to apply
                   </p>
                 </motion.article>
               ))}

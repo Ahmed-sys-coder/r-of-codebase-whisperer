@@ -12,6 +12,8 @@ import {
   User,
   MessageSquare,
 } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
+import { askChatbot } from "@/lib/chat.functions";
 import { useChatbot } from "@/hooks/useChatbot";
 
 interface Message {
@@ -87,6 +89,7 @@ const ChatWidget = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
+  const ask = useServerFn(askChatbot);
   const active = sessions.find((s) => s.id === activeId) ?? sessions[0];
   const messages = active?.messages ?? [];
 
@@ -120,11 +123,18 @@ const ChatWidget = () => {
     setSessions((prev) => prev.map((s) => (s.id === activeId ? updater(s) : s)));
   };
 
-  const sendMessage = (text: string) => {
+  const sendMessage = async (text: string) => {
     const value = text.trim();
     if (!value) return;
     const now = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
     const userMsg: Message = { id: Date.now(), text: value, sender: "user", time: now };
+
+    const history = [...messages, userMsg]
+      .slice(-14)
+      .map((m) => ({
+        role: (m.sender === "user" ? "user" : "assistant") as "user" | "assistant",
+        content: m.text,
+      }));
 
     updateActive((s) => ({
       ...s,
@@ -134,17 +144,22 @@ const ChatWidget = () => {
     setInput("");
     setIsTyping(true);
 
-    setTimeout(() => {
-      const reply = botResponses[value] || defaultResponse;
-      const botMsg: Message = {
-        id: Date.now() + 1,
-        text: reply,
-        sender: "bot",
-        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-      };
-      updateActive((s) => ({ ...s, messages: [...s.messages, botMsg] }));
-      setIsTyping(false);
-    }, 900);
+    let reply = defaultResponse;
+    try {
+      const res = await ask({ data: { messages: history } });
+      if (res?.reply) reply = res.reply;
+    } catch (err) {
+      console.error("[chatbot] request failed", err);
+    }
+
+    const botMsg: Message = {
+      id: Date.now() + 1,
+      text: reply,
+      sender: "bot",
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    };
+    updateActive((s) => ({ ...s, messages: [...s.messages, botMsg] }));
+    setIsTyping(false);
   };
 
   const handleNewChat = () => {

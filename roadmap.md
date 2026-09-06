@@ -23,3 +23,8 @@
 - [ ] Founder: rename to Ahmed Tatla, new photo (awaiting upload)
 - [ ] Service pages: lighter, readable feature containers
 - [ ] Add case studies: HAFIZ, Interior Design, Playland, Construction, ERP
+- [ ] Careers: remove visible email text ("Email us" only), keep Apply via Email button
+- [ ] Industries We Serve: purple #8A08FA text + icons
+- [ ] Blog Discussion: guest comments must actually post
+- [ ] Chatbot not answering queries — fix
+- [ ] Privacy + Terms pages: optimize to new theme, stronger content

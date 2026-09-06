@@ -64,10 +64,6 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
-      if (!userId) {
-        toast.error("Please sign in to comment");
-        return;
-      }
       const trimmedName = name.trim();
       const trimmedContent = content.trim();
       if (!trimmedName || !trimmedContent) {
@@ -90,9 +86,24 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
       }
 
       setSubmitting(true);
+
+      // Visitors can comment without creating an account: start a lightweight
+      // anonymous session on demand so the insert satisfies row-level security.
+      let authorId = userId;
+      if (!authorId) {
+        const { data: anon, error: anonError } = await supabase.auth.signInAnonymously();
+        if (anonError || !anon.user) {
+          toast.error("Couldn't post your comment. Please try again.");
+          setSubmitting(false);
+          return;
+        }
+        authorId = anon.user.id;
+        setUserId(authorId);
+      }
+
       const { error } = await supabase.from("blog_comments").insert({
         blog_id: blogId,
-        user_id: userId,
+        user_id: authorId,
         author_name: trimmedName,
         content: trimmedContent,
       });
@@ -146,12 +157,11 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
               className="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
             />
             <textarea
-              placeholder={userId ? "Share your thoughts..." : "Please sign in to comment"}
+              placeholder="Share your thoughts..."
               value={content}
               onChange={(e) => setContent(e.target.value)}
               maxLength={1000}
               rows={3}
-              disabled={!userId}
               className="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all resize-none disabled:opacity-50"
             />
             <div className="flex items-center justify-between">
@@ -160,13 +170,14 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
               </span>
               <button
                 type="submit"
-                disabled={submitting || !userId}
+                disabled={submitting}
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all disabled:opacity-50"
               >
                 <Send size={14} />
-                Post Comment
+                {submitting ? "Posting..." : "Post Comment"}
               </button>
             </div>
+
           </div>
         </form>
 

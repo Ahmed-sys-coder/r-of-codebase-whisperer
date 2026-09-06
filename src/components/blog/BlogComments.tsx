@@ -64,10 +64,6 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
-      if (!userId) {
-        toast.error("Please sign in to comment");
-        return;
-      }
       const trimmedName = name.trim();
       const trimmedContent = content.trim();
       if (!trimmedName || !trimmedContent) {
@@ -90,9 +86,24 @@ const BlogComments = forwardRef<HTMLDivElement, BlogCommentsProps>(
       }
 
       setSubmitting(true);
+
+      // Visitors can comment without creating an account: start a lightweight
+      // anonymous session on demand so the insert satisfies row-level security.
+      let authorId = userId;
+      if (!authorId) {
+        const { data: anon, error: anonError } = await supabase.auth.signInAnonymously();
+        if (anonError || !anon.user) {
+          toast.error("Couldn't post your comment. Please try again.");
+          setSubmitting(false);
+          return;
+        }
+        authorId = anon.user.id;
+        setUserId(authorId);
+      }
+
       const { error } = await supabase.from("blog_comments").insert({
         blog_id: blogId,
-        user_id: userId,
+        user_id: authorId,
         author_name: trimmedName,
         content: trimmedContent,
       });

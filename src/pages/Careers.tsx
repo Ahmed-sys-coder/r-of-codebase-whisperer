@@ -348,18 +348,18 @@ const Careers = () => {
                 How to Send Your Resume
               </h3>
               <p className="text-sm text-neutral-300 max-w-xl mx-auto mb-6 leading-relaxed">
-                Email your CV/resume (PDF) with the internship title in the subject line to{" "}
-                <span className="text-[#B583FF] font-semibold">{APPLY_EMAIL}</span>. Include your
-                university, weekly availability, and portfolio or GitHub links. We reply to
+                Email your CV/resume (PDF) with the internship title in the subject line. Include
+                your university, weekly availability, and portfolio or GitHub links. We reply to
                 shortlisted applicants within 7 working days.
               </p>
               <a
                 href={`mailto:${APPLY_EMAIL}?subject=${encodeURIComponent("Internship Application")}`}
                 className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold text-white rounded-full bg-[#8A08FA] hover:bg-[#0025CC] transition-colors duration-300"
               >
-                Email {APPLY_EMAIL}
+                Email us
                 <ArrowUpRight size={15} />
               </a>
+
             </motion.div>
           </div>
         </main>

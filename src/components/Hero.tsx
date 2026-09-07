@@ -3,7 +3,6 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { WHATSAPP_URL, WHATSAPP_ARIA } from "@/lib/whatsapp";
 import { useEffect, useRef } from "react";
-import { useNavigate } from "@/lib/router-compat";
 
 const NeuralNetworkBG = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -96,11 +95,10 @@ const NeuralNetworkBG = () => {
 };
 
 const Hero = () => {
-  const navigate = useNavigate();
 
   const scrollToServices = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigate("/services");
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -163,7 +161,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="/services"
+            href="#services"
             onClick={scrollToServices}
             className="group inline-flex items-center gap-1.5 px-6 py-3.5 rounded-full text-sm font-medium text-white border border-white/20 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-violet-400/60 transition-all duration-300"
             style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1)" }}

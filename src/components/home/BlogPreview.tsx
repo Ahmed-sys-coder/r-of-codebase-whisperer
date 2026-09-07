@@ -55,7 +55,7 @@ const BlogPreview = () => {
                     <span className="relative z-[2] text-[10px] font-semibold uppercase tracking-[0.22em] mb-3 text-silver">
                       {post.category}
                     </span>
-                    <h3 className="text-base md:text-[17px] font-semibold text-foreground/95 mb-2.5 leading-[1.3] line-clamp-2 group-hover:text-white transition-colors">
+                    <h3 className="text-base md:text-[17px] font-semibold text-foreground/95 mb-2.5 leading-[1.3] line-clamp-2 group-hover:text-[#B668FF] transition-colors">
                       {post.title}
                     </h3>
                     <p className="text-xs md:text-[13px] text-silver leading-[1.6] mb-4 line-clamp-2 flex-1 group-hover:text-foreground/85 transition-colors">
@@ -89,7 +89,7 @@ const BlogPreview = () => {
         <div className="text-center mt-12">
           <Link
             to="/blog"
-            className="btn-ghost-purple group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium text-silver border border-[hsl(0_0%_100%/0.08)] transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-[#8A08FA] border border-[#8A08FA] hover:-translate-y-0.5 transition-all duration-300"
           >
             Read All Articles
             <ArrowRight

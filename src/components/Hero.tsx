@@ -3,7 +3,6 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { WHATSAPP_URL, WHATSAPP_ARIA } from "@/lib/whatsapp";
 import { useEffect, useRef } from "react";
-import { useNavigate } from "@/lib/router-compat";
 
 const NeuralNetworkBG = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -96,7 +95,6 @@ const NeuralNetworkBG = () => {
 };
 
 const Hero = () => {
-  const navigate = useNavigate();
 
   const scrollToServices = (e: React.MouseEvent) => {
     e.preventDefault();

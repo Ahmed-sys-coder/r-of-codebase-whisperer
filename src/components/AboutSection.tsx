@@ -52,7 +52,7 @@ const AboutSection = () => {
       <div
         className="absolute inset-0 -z-10"
         style={{
-          background: "#0025CC",
+          background: "#1E40F0",
           backgroundSize: "400% 400%",
           animation: "gradientShift 15s ease infinite",
         }}

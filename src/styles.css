@@ -148,8 +148,8 @@
 
   .glass-hover:hover {
     transform: translateY(-4px);
-    border-color: hsl(var(--glass-border-hover));
-    box-shadow: 0 0 0 1px #8A08FA;
+    border-color: rgba(182, 104, 255, 0.45);
+    box-shadow: 0 0 0 1px #B668FF, 0 18px 44px -20px rgba(182, 104, 255, 0.35);
   }
   .glass-hover > * { position: relative; z-index: 1; }
 

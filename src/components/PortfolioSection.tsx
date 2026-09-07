@@ -77,7 +77,7 @@ const CardInner = ({ s, featured }: { s: Study; featured?: boolean }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#8A08FA]/55 via-[#1e3a8a]/35 to-[#7c3aed]/55 mix-blend-multiply" />
       <div className="absolute top-4 left-4">
-        <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30">
+        <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#8A08FA] px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/60">
           {s.category}
         </span>
       </div>
@@ -170,7 +170,7 @@ const PortfolioSection = () => {
         <div className="text-center mt-12">
           <a
             href="/portfolio"
-            className="group inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#8A08FA] to-[#7c3aed] shadow-[0_10px_30px_rgba(15,69,148,0.25)] hover:shadow-[0_14px_36px_rgba(124,58,237,0.35)] hover:-translate-y-0.5 transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold text-white bg-[#8A08FA] border border-[#8A08FA] shadow-[0_10px_30px_rgba(15,69,148,0.25)] hover:shadow-[0_14px_36px_rgba(0,37,204,0.35)] hover:-translate-y-0.5 transition-all duration-300"
           >
             View All Case Studies
             <ArrowRight

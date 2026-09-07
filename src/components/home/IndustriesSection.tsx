@@ -62,12 +62,12 @@ const IndustriesSection = () => (
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-[#8A08FA]/85 via-[#1e3a8a]/75 to-[#7c3aed]/80 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
               <div className="relative z-10 h-full w-full flex flex-col items-start justify-end p-5">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white backdrop-blur-sm border border-[#8A08FA]/40 mb-3">
                   <Icon size={18} className="text-[#8A08FA]" strokeWidth={2} />
                 </span>
-                <h3 className="text-sm md:text-base font-semibold text-[#8A08FA] tracking-[-0.01em] drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                <h3 className="text-base md:text-lg font-bold text-white tracking-[-0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                   {it.name}
                 </h3>
               </div>

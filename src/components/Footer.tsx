@@ -5,11 +5,11 @@ import logoCE from "@/assets/CET_logo.svg";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const services = [
-  { label: "Custom Software", href: "/services" },
-  { label: "AI Platforms", href: "/services" },
-  { label: "SaaS Products", href: "/services" },
-  { label: "Web & Mobile Apps", href: "/services" },
-  { label: "UI/UX Design", href: "/services" },
+  { label: "Custom Software", href: "/services/custom-software-development" },
+  { label: "AI Platforms", href: "/services/ai-development" },
+  { label: "SaaS Products", href: "/services/custom-web-development" },
+  { label: "Web & Mobile Apps", href: "/services/mobile-app-development" },
+  { label: "UI/UX Design", href: "/services/ui-ux-design" },
 ];
 
 const company = [

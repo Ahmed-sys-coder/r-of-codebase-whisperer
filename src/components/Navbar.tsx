@@ -154,7 +154,7 @@ const Navbar = () => {
                   onMouseLeave={() => setServicesOpen(false)}
                 >
                   <button
-                    onClick={() => handleNavClick(link)}
+                    onClick={() => setServicesOpen((v) => !v)}
                     className={`${baseBtnClass} inline-flex items-center gap-1.5`}
                     style={baseBtnStyle}
                     aria-haspopup="menu"
@@ -345,16 +345,6 @@ const Navbar = () => {
                             className="overflow-hidden"
                           >
                             <div className="pl-2 pr-1 py-1.5 flex flex-col gap-0.5">
-                              <Link
-                                to="/services"
-                                onClick={() => {
-                                  setMobileOpen(false);
-                                  setMobileServicesOpen(false);
-                                }}
-                                className="block px-3 py-2.5 rounded-xl text-[14px] font-semibold text-[#111827] hover:bg-[rgba(138,8,250,0.10)]"
-                              >
-                                All Services
-                              </Link>
                               {SERVICE_NAV.map((s) => {
                                 const SIcon = s.icon;
                                 return (

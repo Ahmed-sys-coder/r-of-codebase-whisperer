@@ -381,7 +381,33 @@ const ChatWidget = () => {
                                     : { borderColor: "#E5E7EB" }
                                 }
                               >
-                                {msg.text}
+                                {msg.sender === "bot" ? (
+                                  <ReactMarkdown
+                                    components={{
+                                      p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                                      h1: ({ children }) => <h1 className="text-base font-bold mb-2 mt-1">{children}</h1>,
+                                      h2: ({ children }) => <h2 className="text-sm font-bold mb-2 mt-2">{children}</h2>,
+                                      h3: ({ children }) => <h3 className="text-sm font-semibold mb-1 mt-2">{children}</h3>,
+                                      ul: ({ children }) => <ul className="list-disc pl-4 mb-2 space-y-1">{children}</ul>,
+                                      ol: ({ children }) => <ol className="list-decimal pl-4 mb-2 space-y-1">{children}</ol>,
+                                      li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                                      strong: ({ children }) => <strong className="font-semibold text-[#111827]">{children}</strong>,
+                                      em: ({ children }) => <em className="italic">{children}</em>,
+                                      a: ({ children, href }) => (
+                                        <a href={href} target="_blank" rel="noopener noreferrer" className="text-[#0025CC] underline hover:text-[#8A08FA]">
+                                          {children}
+                                        </a>
+                                      ),
+                                      code: ({ children }) => <code className="px-1 py-0.5 rounded bg-[#F3F4F6] text-[#111827] text-xs font-mono">{children}</code>,
+                                      pre: ({ children }) => <pre className="p-2 rounded-lg bg-[#F3F4F6] overflow-x-auto text-xs font-mono my-2">{children}</pre>,
+                                      blockquote: ({ children }) => <blockquote className="border-l-4 border-[#8A08FA] pl-3 italic text-[#4B5563] my-2">{children}</blockquote>,
+                                    }}
+                                  >
+                                    {msg.text}
+                                  </ReactMarkdown>
+                                ) : (
+                                  msg.text
+                                )}
                               </div>
                               <p
                                 className={`text-[10px] mt-1 text-[#9CA3AF] ${

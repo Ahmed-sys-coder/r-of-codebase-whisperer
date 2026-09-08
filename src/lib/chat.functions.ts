@@ -68,35 +68,85 @@ export const askChatbot = createServerFn({ method: "POST" })
       };
     }
 
-    const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+    const res = await fetch("https://ai.gateway.lovable.dev/v1/responses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Lovable-API-Key": key,
+        "X-Lovable-AIG-SDK": "fetch",
       },
       body: JSON.stringify({
-        model: "google/gemini-3.6-flash",
-        messages: [{ role: "system", content: SYSTEM_PROMPT }, ...data.messages],
-        stream: false,
+        model: "openai/gpt-5.6-sol",
+        instructions: SYSTEM_PROMPT,
+        input: data.messages.map((message) => ({
+          role: message.role,
+          content: message.content,
+        })),
+        stream: true,
+        store: false,
+        reasoning: { effort: "medium", summary: "auto" },
       }),
     });
 
     if (!res.ok) {
       const detail = await res.text().catch(() => "");
       console.error("[chatbot] gateway error", res.status, detail.slice(0, 500));
-      const reply =
-        res.status === 429
-          ? "We're getting a lot of questions right now — please try again in a moment."
-          : "I couldn't reach the assistant just now. Please try again, or email info.codeenvision@gmail.com.";
-      return { reply };
+      if (res.status === 429) {
+        return { reply: "We're getting a lot of questions right now — please try again in a moment." };
+      }
+      try {
+        const error = JSON.parse(detail) as { error?: { message?: string }; message?: string };
+        return {
+          reply:
+            error.error?.message ||
+            error.message ||
+            "I couldn't reach the assistant just now. Please try again, or email info.codeenvision@gmail.com.",
+        };
+      } catch {
+        return {
+          reply: "I couldn't reach the assistant just now. Please try again, or email info.codeenvision@gmail.com.",
+        };
+      }
     }
 
-    const json = (await res.json()) as {
-      choices?: Array<{ message?: { content?: string } }>;
-    };
-    const reply =
-      json.choices?.[0]?.message?.content?.trim() ||
-      "Sorry, I didn't catch that. Could you rephrase your question?";
+    if (!res.body) {
+      return { reply: "Sorry, I didn't catch that. Could you rephrase your question?" };
+    }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let reply = "";
+    let reasoningSummary = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      buffer += decoder.decode(value, { stream: !done });
+      const events = buffer.split("\n\n");
+      buffer = events.pop() ?? "";
+
+      for (const event of events) {
+        for (const line of event.split("\n")) {
+          if (!line.startsWith("data: ")) continue;
+          const payload = line.slice(6);
+          if (payload === "[DONE]") continue;
+          try {
+            const parsed = JSON.parse(payload) as { type?: string; delta?: string };
+            if (parsed.type === "response.output_text.delta") reply += parsed.delta ?? "";
+            if (parsed.type === "response.reasoning_summary_text.delta") {
+              reasoningSummary += parsed.delta ?? "";
+            }
+          } catch {
+            // Ignore incomplete or non-JSON stream events.
+          }
+        }
+      }
+
+      if (done) break;
+    }
+
+    reply = reply.trim() || reasoningSummary.trim();
+    if (!reply) reply = "Sorry, I didn't catch that. Could you rephrase your question?";
 
     return { reply };
   });

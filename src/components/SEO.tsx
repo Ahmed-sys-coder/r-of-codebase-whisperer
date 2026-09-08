@@ -33,38 +33,21 @@ const SEO = ({
   author,
   jsonLd,
 }: SEOProps) => {
-  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
-  const absoluteUrl = `${SITE_ORIGIN}${path}`;
-  const finalImage = ogImage || image;
+
+  // Titles, descriptions, canonical, and social tags are rendered server-side
+  // through each route's head() config (see src/lib/seo.ts). This component now
+  // only adds page-level structured data so tags are never duplicated.
+  if (schemas.length === 0) return null;
 
   return (
     <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      <meta
-        name="robots"
-        content={noIndex ? "noindex, nofollow" : "index, follow"}
-      />
-      <link rel="canonical" href={absoluteUrl} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={absoluteUrl} />
-      <meta property="og:site_name" content={SITE_NAME} />
-      {finalImage && <meta property="og:image" content={finalImage} />}
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-      {author && <meta property="article:author" content={author} />}
-      <meta name="twitter:card" content={finalImage ? "summary_large_image" : "summary"} />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      {finalImage && <meta name="twitter:image" content={finalImage} />}
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>
       ))}
     </Helmet>
   );
 };
+
 
 export default SEO;

@@ -203,7 +203,7 @@ const CaseStudyCard = ({ study, index }: Props) => {
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#A855F7] hover:bg-[#0025CC] transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#8A08FA] hover:bg-[#0025CC] transition-colors duration-300"
             >
               View Case Study
               <ArrowRight size={13} />

@@ -28,10 +28,16 @@ const PortfolioSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-stretch">
-          {homepageStudies.map((study, i) => (
-            <CaseStudyCard key={study.id} study={study} index={i} />
-          ))}
+        <div className="space-y-5 md:space-y-6">
+          <div className="grid grid-cols-1">
+            <CaseStudyCard study={homepageStudies[0]} index={0} />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-stretch">
+            {homepageStudies.slice(1).map((study, i) => (
+              <CaseStudyCard key={study.id} study={study} index={i + 1} />
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">

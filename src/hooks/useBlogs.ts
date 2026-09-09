@@ -37,14 +37,19 @@ const mapDbBlog = (b: DbBlog): BlogPost => ({
 export const useBlogs = () => {
   const { data: dbBlogs, isLoading } = useQuery({
     queryKey: ['public-blogs'],
+    retry: false,
     queryFn: async () => {
-      const { data, error } = await (supabase as any)
-        .from('blogs')
-        .select('*')
-        .eq('published', true)
-        .order('created_at', { ascending: false });
-      if (error) return [];
-      return (data || []) as DbBlog[];
+      try {
+        const { data, error } = await (supabase as any)
+          .from('blogs')
+          .select('*')
+          .eq('published', true)
+          .order('created_at', { ascending: false });
+        if (error) return [];
+        return (data || []) as DbBlog[];
+      } catch {
+        return [];
+      }
     },
   });
 
@@ -61,5 +66,7 @@ export const useBlogs = () => {
 export const useBlogBySlug = (slug: string | undefined) => {
   const { blogs, isLoading } = useBlogs();
   const blog = useMemo(() => blogs.find((b) => b.id === slug), [blogs, slug]);
-  return { blog, blogs, isLoading };
+  // Static articles are always available, so never block on the remote fetch.
+  return { blog, blogs, isLoading: isLoading && !blog };
 };
+
